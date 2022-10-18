@@ -21,7 +21,7 @@ Two popular examples of UNIX systems are [Solaris](https://www.oracle.com/solari
 So now you should have also understood what is Linux (or better, GNU/Linux). **GNU/Linux** is (another) OS of the **UNIX-like family** and is the result of the fusion of the Linux and the GNU projects (we will not discuss here the reasons behind this fusion). GNU/Linux comes nowadays with many distributions ("distros" in short), like [Ubuntu](https://www.ubuntu-it.org/) (the one you are probably going to use), [Fedora](https://getfedora.org/it/), [Debian](https://www.debian.org/index.it.html) and [Arch Linux](https://archlinux.org/).
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/72141380/196497641-0ef276cb-a7b4-453a-87f8-f56aeec0e827.jpg" height="100"><img src="https://user-images.githubusercontent.com/72141380/196494926-2ad5897b-7b55-4ee4-bbca-3af8a9be4f83.png" height="100">
+<img src="https://user-images.githubusercontent.com/72141380/196498196-681b548d-aa3a-43fe-9b0c-64b0abbe5be0.png" height="100"><img src="https://user-images.githubusercontent.com/72141380/196494926-2ad5897b-7b55-4ee4-bbca-3af8a9be4f83.png" height="100">
 </p>
 
 
