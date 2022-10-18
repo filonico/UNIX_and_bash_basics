@@ -1,3 +1,4 @@
-# Unix, Linux and Bash: let's make things clear
-When first approaching bioinformatics, biologists may tend to confuse and use indiscriminately the words "Unix", "Linux" and "Bash". However, all of them refer to different concepts:
-  - "Unix" 
+# Bash basics for trainee students
+This repository is meant to introduce trainee students of the MoZoo Lab of the University of Bologna to the Bash environment and as a general reference to retrieve most common commands used in bioinformatics.
+
+Enjoy!
