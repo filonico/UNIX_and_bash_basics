@@ -56,4 +56,5 @@ On the contrary, the shell will just take few minutes of your time to do the tas
 
 Overall, the shell (or terminal, or command-line) can just be considered as a way to interact with your computer through text-based commands. The shell is thus **a program** that is able to understand commands and allows users to interact with text files, directories, executables and everything else is stored in a computer.
 
-
+### Bash is a UNIX-shell and a command language
+Many UNIX-shells exhist nowadays, but the most popular is the **Bourne-Again Shell** (**Bash**), a replacement of the original Bourne shell (sh). Bash is essentially a command language
