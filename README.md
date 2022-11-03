@@ -56,8 +56,10 @@ On the contrary, the shell will just take few minutes of your time to do the tas
 
 Overall, the shell (or terminal, or command-line) can just be considered as a way to interact with your computer through text-based commands. The shell is thus **a program** that is able to understand commands and allows users to interact with text files, directories, executables and everything else is stored in a computer.
 
+Every text command you type in the shell is called the **standard input** (stdin). Every text output you are given by a command is called the **standard output** (stdout). Every error message you are given by a command is called the **standard error** (stderr). This classification will be useful when we will start to use scripts and redirection. 
+
 ### Bash is a UNIX shell and a command language
-Many UNIX shells exhist nowadays, but the most popular is the **Bourne-Again Shell** (**Bash**), a replacement of the original Bourne shell (sh). Bash is essentially a command and programming language and, as such, it uses its own syntax and grammar. So, be aware that the same command may not work in the same way between different shells (even between UNIX shells). Bash, for example, uses a dollar symbol (**<code>$</code>**) as its own prompt, that is, when the shell is ready to receive a command it will display a <code>$</code> (not by chance, the <code>$</code> is also present in the bash logo) . On the contrary, a C shell will display a <code>%</code> as a prompt.
+Many UNIX shells exhist nowadays, but the most popular is the **B**ourne-**A**gain **Sh**ell (**Bash**), a replacement of the original Bourne shell (sh). Bash is essentially a command and programming language and, as such, it uses its own syntax and grammar. So, be aware that the same command may not work in the same way between different shells (even between UNIX shells). Bash, for example, uses a dollar symbol (**<code>$</code>**) as its own prompt, that is, when the shell is ready to receive a command it will display a <code>$</code> (not by chance, the <code>$</code> is also present in the bash logo) . On the contrary, a C shell will display a <code>%</code> as a prompt.
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/72141380/199702109-62ad5c3f-72a1-438d-9752-c0dc32bd4750.png", height=100>
@@ -66,7 +68,7 @@ Many UNIX shells exhist nowadays, but the most popular is the **Bourne-Again She
 ## Login to a remote machine or server
 When dealing with bioinformatic data, it may be very unpleasant to work in local computers (or work stations), mostly because of the great amount of computing power that is required to run several processes. This means that most of the time bioinformaticians use to work on remote machine (being them other work stations, servers or clusters), which provide large computing resources and allow to run memory-demanding tasks.
 
-As their name suggest, remote machines must be accessed remotely. The most common way is to use the *secure shell* (SSH), which is an **encrypted**, **UNIX-ubiquitous connection**. To **connect and login** to a remote machine then just type:
+As their name suggest, remote machines must be accessed remotely. The most common way is to use the ***s**ecure **sh**ell* (SSH), which is an **encrypted**, **UNIX-ubiquitous connection**. To **connect and login** to a remote machine then just type:
 
 ```
 $ ssh username@IPaddress
@@ -80,4 +82,29 @@ $ exit
 ```
 
 ## Basic commands to manage files and directories
-Once you have logged-in in a remote machine 
+Once you have logged-in in a remote machine (or just opened the shell on your local computer), you may be wondering in which remote directory you are. To know the  exact location you are working in (i.e., the working directory), just type:
+
+```
+$ pwd
+/home/filonico
+```
+which stands for ***p**rint **w**orking **d**irectory*. Usually, when opening the shell, you enter by default your <code>home</code> directory, which is shortened by the symbol <code>~</code>.
+
+Now, if you want to change your working directory and navigate thourgh the directories, for example to reach the desktop of your local machine, just type:
+
+```
+$ cd /mnt/c/Users/nicol/Desktop/
+```
+which stands for ***c**hange **d**irectory*. Some other useful <code>cd</code> commands are:
+
+```
+#go to the parent directory
+$ cd ..
+#go to the previous directory
+$ cd -
+#go to the root directory
+$ cd /
+#go to the home directory
+$ cd
+```
+Here, you can learn the difference between an **absolute path** and a **relative path**. The absolute path unambiguously defines a file or a directory. The relative path, instead, defines the path to a file or a directory *relatively to the working directory*.
