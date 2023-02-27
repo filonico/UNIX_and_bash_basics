@@ -10,7 +10,7 @@ This repository is meant to introduce trainee students of the MoZoo Lab of the U
     - [The shell is a command-line interpreter](#the-shell-is-a-command-line-interpreter)
     - [Bash is a UNIX shell and a command language](#bash-is-a-unix-shell-and-a-command-language)
   - [Login to a remote machine (ssh)](#login-to-a-remote-machine-or-server)
-  - Basic commands to manage files and directories (mkdir, cd, pwd, mv, cp, gzip, tar,...)
+  - Basic commands to manage directories and files (pwd, cd, mkdir, mv, cp, gzip, tar,...)
   - Bash scripting (|, >, &&, ||, variables, for cycle, if statements, while cycle,...)
   - Find, find and replace and working with "tables" (grep, sed, awk)
   - Working with conda environments
@@ -68,36 +68,37 @@ Many UNIX shells exhist nowadays, but the most popular is the **B**ourne-**A**ga
 ## Login to a remote machine or server
 When dealing with bioinformatic data, it may be very unpleasant to work in local computers (or work stations), mostly because of the great amount of computing power that is required to run several processes. This means that most of the time bioinformaticians use to work on remote machine (being them other work stations, servers or clusters), which provide large computing resources and allow to run memory-demanding tasks.
 
-As their name suggest, remote machines must be accessed remotely. The most common way is to use the ***s**ecure **sh**ell* (SSH), which is an **encrypted**, **UNIX-ubiquitous connection**. To **connect and login** to a remote machine then just type:
+As their name suggest, remote machines must be accessed remotely. The most common way is to use the *<ins>s</ins>ecure <ins>sh</ins>ell* (SSH), which is an **encrypted**, **UNIX-ubiquitous connection**. To **connect and login** to a remote machine then just type:
 
-```
+```bash
 $ ssh username@IPaddress
 ```
 and you will be asked a password. If everything went well, then you are logged-in in your remote machine.
 
 If you want to **log-out** from the remote machine, just press <code>[Ctrl]+[D]</code> or type:
 
-```
+```bash
 $ exit
 ```
 
-## Basic commands to manage files and directories
+## Basic commands to manage directories and files
+### pwd, cd and mkdir to manage directories
 Once you have logged-in in a remote machine (or just opened the shell on your local computer), you may be wondering in which remote directory you are. To know the  exact location you are working in (i.e., the working directory), just type:
 
-```
+```bash
 $ pwd
 /home/filonico
 ```
-which stands for ***p**rint **w**orking **d**irectory*. Usually, when opening the shell, you enter by default your <code>home</code> directory, which is shortened by the symbol <code>~</code>.
+which stands for *<ins>p</ins>rint <ins>w</ins>orking <ins>d</ins>irectory*. Usually, when opening the shell, you enter by default your <code>home</code> directory, which is shortened by the symbol <code>~</code>.
 
-Now, if you want to change your working directory and navigate thourgh the directories, for example to reach the desktop of your local machine, just type:
+If you want to change your working directory and navigate thourgh the directories, for example to reach the desktop of your local machine, just type:
 
+```bash
+$ cd /path/to/your/Desktop/
 ```
-$ cd /mnt/c/Users/nicol/Desktop/
-```
-which stands for ***c**hange **d**irectory*. Some other useful <code>cd</code> commands are:
+where <code>cd</code> stands for *<ins>c</ins>hange <ins>d</ins>irectory*. Some other useful <code>cd</code> commands are:
 
-```
+```bash
 #go to the parent directory
 $ cd ..
 #go to the previous directory
@@ -107,4 +108,13 @@ $ cd /
 #go to the home directory
 $ cd
 ```
-Here, you can learn the difference between an **absolute path** and a **relative path**. The absolute path unambiguously defines a file or a directory. The relative path, instead, defines the path to a file or a directory *relatively to the working directory*.
+You can now understand the difference between an **absolute path** and a **relative path**. The absolute path unambiguously defines a file or a directory. The relative path, instead, defines the path to a file or a directory *relatively to the working directory*.
+
+If you want to create a new directory in your current location just type:
+
+```bash
+$ mkdir your/directory/name
+```
+where <code>mkdir</code> stands for *<ins>m</ins>a<ins>k</ins>e <ins>dir</ins>ectory*.
+###vi, nano and touch to create files
+
