@@ -159,5 +159,5 @@ $ extract_the_headers Dmel.mito.proteins.fasta | remove_unwanted_information | c
 ```
 Both <code>cat</code> and <code>less</code> can be used also to **read gzipped files** by using their sister commands <code>zcat</code> and <code>zless</code>, respectively (we will see how to (un)compress files in a following section).
 
-Sometimes you may need to read just the first or last lines of a file, for example because you just need to know the header of an output or the ending time of a certain analysis.
+Sometimes you may need to read just the first or last lines of a file, for example because you just need to know the header of an output or the ending time of a certain analysis. You can then use <code>head</code> and <code>tail</code> to **print to the standard output the first and last 10 lines of a file** respectively.
 
