@@ -177,3 +177,27 @@ $ tail -n +2 Dmel.mito.genome.gb #remove the first comment line from the genbank
 > Use <code>head</code> to print the first N lines of a file to the stdout.
 > 
 > Use <code>tail</code> to print the last N lines of a file to the stdout.
+
+### cp and mv to copy/paste and cut/paste files
+In bioinformatics it is usually very important to maintain one (or even more) backup copy(ies) of the files you are working with, in order to not risk to lose your work. Thus, it is advisable to **copy** the original files and **paste** them in a different location on your storage, by using:
+```bash
+#copy a file to a different location and keep the original name
+$ cp your_file.txt /location/of/the/copy/of/your_file.txt
+#copy a file to a different location and rename the copy
+$ cp your_file.txt /location/of/the/copy/of/your_file_copy.txt
+```
+where <code>cp/code> stands obviously for *<ins>c</ins>o<ins>p</insy*.
+  
+However, the storage memory is not limitless, so sometimes it is more convenient to **cut** your files and **paste** them in a different location on your storage, by usig:
+```bash
+#move a file to a different location and keep the original name
+$ mv your_file.txt new/location/of/your_file.txt
+#move a file to a different location and rename it
+$ mv your_file.txt new/location/of/your_file_new.txt
+# if you do not specifiy a different directory, the file will be just renamed
+$ mv your_file.txt your_file_new.txt
+```
+where <code>mv</code> stands for *<ins>m</ins>o<ins>v</ins>e*.
+  
+> Use <code>cp</code> to copy and paste files
+  
