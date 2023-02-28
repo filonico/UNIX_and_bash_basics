@@ -10,7 +10,9 @@ This repository is meant to introduce trainee students of the MoZoo Lab of the U
     - [The shell is a command-line interpreter](#the-shell-is-a-command-line-interpreter)
     - [Bash is a UNIX shell and a command language](#bash-is-a-unix-shell-and-a-command-language)
   - [Login to a remote machine (ssh)](#login-to-a-remote-machine-or-server)
-  - Basic commands to manage directories and files (pwd, cd, mkdir, mv, cp, gzip, tar,...)
+  - [Basic commands to manage directories and files (pwd, cd, mkdir, mv, cp, gzip, tar,...)](#basic-commands-to-manage-directories-and-files)
+    - [pwd, cd and mkdir to manage directories](#pwd-cd-and-mkdir-to-manage-directories)
+    - [cat, less, head and tail to read file content](#cat-less-head-and-tail-to-read-file-content)
   - Bash scripting (|, >, &&, ||, variables, for cycle, if statements, while cycle,...)
   - Find, find and replace and working with "tables" (grep, sed, awk)
   - Working with conda environments
@@ -116,16 +118,35 @@ If you want to create a new directory in your current location just type:
 $ mkdir your/directory/name
 ```
 where <code>mkdir</code> stands for *<ins>m</ins>a<ins>k</ins>e <ins>dir</ins>ectory*.
-###cat, less head and tail to read file content
+
+### cat, less, head and tail to read file content
 Through the shell you are going to interact mainly with text files, such as fastq, fasta, vcf and gff files, so it's important for you to know how to read (and visualize) what's inside of them. There are many ways to fulfil this purpose and each of them fits with different needs.
-One of the most common way to inspect a file is by using <code>cat</code>, which will print the content of your file in the standard output:
+
+One of the most common way to inspect a file is by using <code>cat</code>, which will **print the content of your file in the standard output**:
 ```bash
 #inspect the fasta file containing the protein sequence from labial of Drosophila melanogaster 
-$ cat Dmel.labial.fasta
->NP_476613.1 labial, isoform A [Drosophila melanogaster]
-MMDVSSMYGNHPHHHHPHANAYDGYSTTTASAANASSYFAPQQHQPHLQLQQQQQHQHLQQPQQHLTYNGYESSSPGNYYPQQQAQLTPPPTSSHQVVQQHQQQQQAQQQQLYPHSHLFSPSAAEYGITTSTTTGNPGTPLHPSSHSPADSYYESDSVHSYYATAAVATVAPPSNSSPITAANASATSNTQQQQQQAAIISSENGMMYTNLDCMYPTAQAQAPVHGYAGQIEEKYAAVLHASYAPGMVLEDQDPMMQQATQSQMWHHQQHLAGSYALDAMDSLGMHAHMHHGLPHGHLGNLANNPHQQQPQVQQQQQQPHQQPQHPQNQSPAAHQQHHQNSVSPNGGMNRQQRGGVISPGSSTSSSTSASNGAHPASTQSKSPNHSSSIPTYKWMQLKRNVPKPQAPKLPASGIASMHDYQMNGQLDMCRGGGGGGSGVGNGPVGVGGNGSPGIGGVLSVQNSLIMANSAAAAGSAHPNGMGVGLGSGSGLSSCSLSSNTNNSGRTNFTNKQLTELEKEFHFNRYLTRARRIEIANTLQLNETQVKIWFQNRRMKQKKRVKEGLIPADILTQHSTSVISEKPPQQQQPQPPELQLKSQGSDLGGNELATGAPSTPTTAMTLTAPTSKQS
+$ cat Dmel.COI.fasta
+>YP_009047267.1 cytochrome c oxidase subunit I, partial (mitochondrion) [Drosophila melanogaster]
+SRQWLFSTNHKDIGTLYFIFGAWAGMVGTSLSILIRAELGHPGALIGDDQIYNVIVTAHAFIMIFFMVMP
+IMIGGFGNWLVPLMLGAPDMAFPRMNNMSFWLLPPALSLLLVSSMVENGAGTGWTVYPPLSAGIAHGGAS
+VDLAIFSLHLAGISSILGAVNFITTVINMRSTGISLDRMPLFVWSVVITALLLLLSLPVLAGAITMLLTD
+RNLNTSFFDPAGGGDPILYQHLFWFFGHPEVYILILPGFGMISHIISQESGKKETFGSLGMIYAMLAIGL
+LGFIVWAHHMFTVGMDVDTRAYFTSATMIIAVPTGIKIFSWLATLHGTQLSYSPAILWALGFVFLFTVGG
+LTGVVLANSSVDIILHDTYYVVAHFHYVLSMGAVFAIMAGFIHWYPLFTGLTLNNKWLKSHFIIMFIGVN
+LTFFPQHFLGLAGMPRRYSDYPDAYTTWNIVSTIGSTISLLGILFFFFIIWESLVSQRQVIYPIQLNSSI
+EWYQNTPPAEHSYSELPLLTN
 ```
 
+However, <code>cat</code> can be really annoying when reading big files (e.g., the fasta file of the complete predicted proteome of *Drosophila*), since it prints the *entire* content of the file in your terminal: the output will take a lot of your time to be properly inspected and cannot even be directly manipulated.
 
+In these cases, you would like to rely on <code>less</code>, which will **print the content of your file in a sort of a new window**. In addition, <code>less</code> does not read your file all at once, but it will read (and print) it line by line and will allow you to freely scroll the file: this means that the command will take the same amount of time to read 10-sequence-long and 27k-sequence-long fasta files. Also, <code>less</code> contains some build-in functions, such as search and highlight patterns (google will help you in this task).
 
-<code>less</code>, which will print the content of your file in a sort of a new window. 
+<code>less</code> is particularly useful to debugging your command-line pipelines, i.e., it helps you to check step by step if the commands you want to run on your files are working properly.
+```bash
+#imagine you want to extract all the gene IDs of the Drosophila mitochondrial proteins from the relative fasta file
+#the following command lines are just descriptive of the action we want to take
+$ extract_the_headers Dmel.mito.proteins.fasta | less
+$ extract_the_headers Dmel.mito.proteins.fasta | remove_unwanted_information | less
+$ extract_the_headers Dmel.mito.proteins.fasta | remove_unwanted_information | convert_to_tsv_format | less
+```
+Both <code>cat</code> and <code>less</code> can be used to read also gzipped files by using their sister commands <code>zcat</code> and <code>zless</code>, respectively (we will see how to (un)compress files in a following section).
