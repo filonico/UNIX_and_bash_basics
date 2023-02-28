@@ -13,6 +13,7 @@ This repository is meant to introduce trainee students of the MoZoo Lab of the U
   - [Basic commands to manage directories and files (pwd, cd, mkdir, mv, cp, gzip, tar,...)](#basic-commands-to-manage-directories-and-files)
     - [pwd, cd and mkdir to manage directories](#pwd-cd-and-mkdir-to-manage-directories)
     - [cat, less, head and tail to read file content](#cat-less-head-and-tail-to-read-file-content)
+    - [cp and mv to copy/paste and cut/paste files](#cp-and-mv-to-copypaste-and-cutpaste-files)
   - Bash scripting (|, >, &&, ||, variables, for cycle, if statements, while cycle,...)
   - Find, find and replace and working with "tables" (grep, sed, awk)
   - Working with conda environments
@@ -23,6 +24,7 @@ This repository is meant to introduce trainee students of the MoZoo Lab of the U
 ## Useful textbooks and resources
   - [*Unix in a nutshell*](https://www.oreilly.com/library/view/unix-in-a/0596100299/) by Arnold Robbins (2005), O'Reilly Media, Inc.
   - [*Bioinformatics data skills*](https://www.oreilly.com/library/view/bioinformatics-data-skills/9781449367480/) by Vince Buffalo (2015), O'Reilly Media, Inc.
+  - [*Bash scripting cheatsheet*](https://devhints.io/bash) by Rico Sta. Cruz.
   - Take also a look at [notes by Mariangela Iannello](https://github.com/MariangelaIannello/didattica) on bash basics, scripting and transcriptome assembly/annotation pipelines!!
 
 ## UNIX, Linux and Bash: let's make things clear
@@ -186,7 +188,7 @@ $ cp your_file.txt /location/of/the/copy/of/your_file.txt
 #copy a file to a different location and rename the copy
 $ cp your_file.txt /location/of/the/copy/of/your_file_copy.txt
 ```
-where <code>cp/code> stands obviously for *<ins>c</ins>o<ins>p</insy*.
+where <code>cp</code> stands obviously for *<ins>c</ins>o<ins>p</ins>y*.
   
 However, the storage memory is not limitless, so sometimes it is more convenient to **cut** your files and **paste** them in a different location on your storage, by usig:
 ```bash
@@ -199,5 +201,6 @@ $ mv your_file.txt your_file_new.txt
 ```
 where <code>mv</code> stands for *<ins>m</ins>o<ins>v</ins>e*.
   
-> Use <code>cp</code> to copy and paste files
-  
+> Use <code>cp</code> to copy and paste files.
+> 
+> Use <code>mv</code> to cut and paste files or to rename them in their current directory.
