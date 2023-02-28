@@ -130,7 +130,7 @@ where <code>mkdir</code> stands for *<ins>m</ins>a<ins>k</ins>e <ins>dir</ins>ec
 ### cat, less, head and tail to read file content
 Through the shell you are going to interact mainly with text files, such as fastq, fasta, vcf and gff files, so it's important for you to know how to read (and visualize) what's inside of them. There are many ways to fulfil this purpose and each of them fits with different needs.
 
-One of the most common way to inspect a file is by using <code>cat</code>, which will **print the content of your file in the standard output**:
+One of the most common way to inspect a file is by using <code>cat</code>, which will **print the content of your file in the stdout**:
 ```bash
 #inspect the fasta file containing the protein sequence from labial of Drosophila melanogaster 
 $ cat Dmel.COI.fasta
@@ -159,5 +159,21 @@ $ extract_the_headers Dmel.mito.proteins.fasta | remove_unwanted_information | c
 ```
 Both <code>cat</code> and <code>less</code> can be used also to **read gzipped files** by using their sister commands <code>zcat</code> and <code>zless</code>, respectively (we will see how to (un)compress files in a following section).
 
-Sometimes you may need to read just the first or last lines of a file, for example because you just need to know the header of an output or the ending time of a certain analysis. You can then use <code>head</code> and <code>tail</code> to **print to the standard output the first and last 10 lines of a file** respectively.
-
+Sometimes you may need to read just the first or last lines of a file, for example because you just need to know the header of an output or the ending time of a certain analysis. You can then use <code>head</code> and <code>tail</code> to **print to the stdout the first and last 10 lines (default) of a file** respectively:
+```bash
+#you can specify the number of lines to print using the flag -n
+$ head -n 32 Dmel.mito.genome.gb #print the header of the genbank file
+$ tail -n 328 Dmel.mito.genome.gb #print the sequence of the genbank file
+#you can use head/tail to remove the last/first N lines from a file
+$ head -n -328 Dmel.mito.genome.gb #remove the last line from the genbank file
+$ tail -n +2 Dmel.mito.genome.gb #remove the first comment line from the genbank file
+```
+> Use <code>cat</code> to print the entire content of a file to the stdout.
+> 
+> Use <code>less</code> to inspect a chunk of a file and scroll it.
+> 
+> Use <code>less</code> to debug command-line pipelines.
+> 
+> Use <code>head</code> to print the first N lines of a file to the stdout.
+> 
+> Use <code>tail</code> to print the last N lines of a file to the stdout.
