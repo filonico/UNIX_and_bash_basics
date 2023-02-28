@@ -116,5 +116,16 @@ If you want to create a new directory in your current location just type:
 $ mkdir your/directory/name
 ```
 where <code>mkdir</code> stands for *<ins>m</ins>a<ins>k</ins>e <ins>dir</ins>ectory*.
-###vi, nano and touch to create files
+###cat, less head and tail to read file content
+Through the shell you are going to interact mainly with text files, such as fastq, fasta, vcf and gff files, so it's important for you to know how to read (and visualize) what's inside of them. There are many ways to fulfil this purpose and each of them fits with different needs.
+One of the most common way to inspect a file is by using <code>cat</code>, which will print the content of your file in the standard output:
+```bash
+#inspect the fasta file containing the protein sequence from labial of Drosophila melanogaster 
+$ cat Dmel.labial.fasta
+>NP_476613.1 labial, isoform A [Drosophila melanogaster]
+MMDVSSMYGNHPHHHHPHANAYDGYSTTTASAANASSYFAPQQHQPHLQLQQQQQHQHLQQPQQHLTYNGYESSSPGNYYPQQQAQLTPPPTSSHQVVQQHQQQQQAQQQQLYPHSHLFSPSAAEYGITTSTTTGNPGTPLHPSSHSPADSYYESDSVHSYYATAAVATVAPPSNSSPITAANASATSNTQQQQQQAAIISSENGMMYTNLDCMYPTAQAQAPVHGYAGQIEEKYAAVLHASYAPGMVLEDQDPMMQQATQSQMWHHQQHLAGSYALDAMDSLGMHAHMHHGLPHGHLGNLANNPHQQQPQVQQQQQQPHQQPQHPQNQSPAAHQQHHQNSVSPNGGMNRQQRGGVISPGSSTSSSTSASNGAHPASTQSKSPNHSSSIPTYKWMQLKRNVPKPQAPKLPASGIASMHDYQMNGQLDMCRGGGGGGSGVGNGPVGVGGNGSPGIGGVLSVQNSLIMANSAAAAGSAHPNGMGVGLGSGSGLSSCSLSSNTNNSGRTNFTNKQLTELEKEFHFNRYLTRARRIEIANTLQLNETQVKIWFQNRRMKQKKRVKEGLIPADILTQHSTSVISEKPPQQQQPQPPELQLKSQGSDLGGNELATGAPSTPTTAMTLTAPTSKQS
+```
 
+
+
+<code>less</code>, which will print the content of your file in a sort of a new window. 
