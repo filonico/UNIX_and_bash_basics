@@ -149,4 +149,6 @@ $ extract_the_headers Dmel.mito.proteins.fasta | less
 $ extract_the_headers Dmel.mito.proteins.fasta | remove_unwanted_information | less
 $ extract_the_headers Dmel.mito.proteins.fasta | remove_unwanted_information | convert_to_tsv_format | less
 ```
-Both <code>cat</code> and <code>less</code> can be used to read also gzipped files by using their sister commands <code>zcat</code> and <code>zless</code>, respectively (we will see how to (un)compress files in a following section).
+Both <code>cat</code> and <code>less</code> can be used also to **read gzipped files** by using their sister commands <code>zcat</code> and <code>zless</code>, respectively (we will see how to (un)compress files in a following section).
+
+
