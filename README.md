@@ -20,9 +20,10 @@ This repository is meant to introduce trainee students of the MoZoo Lab of the U
   - Working with git (git clone, git push, git pull, git add,...)
     
 
-## Useful textbooks
+## Useful textbooks and resources
   - [*Unix in a nutshell*](https://www.oreilly.com/library/view/unix-in-a/0596100299/) by Arnold Robbins (2005), O'Reilly Media, Inc.
   - [*Bioinformatics data skills*](https://www.oreilly.com/library/view/bioinformatics-data-skills/9781449367480/) by Vince Buffalo (2015), O'Reilly Media, Inc.
+  - Take also a look at [notes by Mariangela Iannello](https://github.com/MariangelaIannello/didattica) on bash basics, scripting and transcriptome assembly/annotation pipelines!!
 
 ## UNIX, Linux and Bash: let's make things clear
 When first approaching bioinformatics, biologists may tend to confuse and use indiscriminately the words "Unix", "Linux" and "Bash". However, each of them refers to *different concepts*.
@@ -82,6 +83,7 @@ If you want to **log-out** from the remote machine, just press <code>[Ctrl]+[D]<
 ```bash
 $ exit
 ```
+> Use <code>ssh</code> to login to remote machines
 
 ## Basic commands to manage directories and files
 ### pwd, cd and mkdir to manage directories
@@ -119,6 +121,12 @@ $ mkdir your/directory/name
 ```
 where <code>mkdir</code> stands for *<ins>m</ins>a<ins>k</ins>e <ins>dir</ins>ectory*.
 
+> Use <code>pwd</code> to print the absolute path of the working directory.
+> 
+> Use <code>cd</code> to move to a different directory.
+> 
+> Use <code>mkdir</code> to create a new directory.
+
 ### cat, less, head and tail to read file content
 Through the shell you are going to interact mainly with text files, such as fastq, fasta, vcf and gff files, so it's important for you to know how to read (and visualize) what's inside of them. There are many ways to fulfil this purpose and each of them fits with different needs.
 
@@ -151,4 +159,5 @@ $ extract_the_headers Dmel.mito.proteins.fasta | remove_unwanted_information | c
 ```
 Both <code>cat</code> and <code>less</code> can be used also to **read gzipped files** by using their sister commands <code>zcat</code> and <code>zless</code>, respectively (we will see how to (un)compress files in a following section).
 
+Sometimes you may need to read just the first or last lines of a file, for example because you just need to know the header of an output or the ending time of a certain analysis.
 
