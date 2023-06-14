@@ -142,9 +142,9 @@ where <code>mkdir</code> stands for *<ins>m</ins>a<ins>k</ins>e <ins>dir</ins>ec
 ### cat, less, head and tail to read file content
 Through the shell you are going to interact mainly with text files, such as fastq, fasta, vcf and gff files, so it's important for you to know how to read (and visualize) what's inside of them. There are many ways to fulfil this purpose and each of them fits with different needs.
 
-One of the most common way to inspect a file is by using <code>cat</code>, which will **print the content of your file in the stdout**:
+One of the most common way to inspect a file is by using <code>cat</code>, which will **print the content of your file in the stdout** ([here](example_files/Dmel.COI.fasta) is the <code>Dmel.COI.fasta</code> file):
 ```bash
-#inspect the [fasta file](example_files/Dmel.COI.fasta) containing the protein sequence from the COI gene of Drosophila melanogaster 
+#inspect the fasta file containing the protein sequence from the COI gene of Drosophila melanogaster 
 $ cat Dmel.COI.fasta
 >YP_009047267.1 cytochrome c oxidase subunit I, partial (mitochondrion) [Drosophila melanogaster]
 SRQWLFSTNHKDIGTLYFIFGAWAGMVGTSLSILIRAELGHPGALIGDDQIYNVIVTAHAFIMIFFMVMP
@@ -171,7 +171,7 @@ $ extract_the_headers Dmel.mito.proteins.fasta | remove_unwanted_information | c
 ```
 Both <code>cat</code> and <code>less</code> can be used also to **read gzipped files** by using their sister commands <code>zcat</code> and <code>zless</code>, respectively (we will see how to (un)compress files in a following section).
 
-Sometimes you may need to read just the first or last lines of a file, for example because you just need to know the header of an output or the ending time of a certain analysis. You can then use <code>head</code> and <code>tail</code> to **print to the stdout the first and last 10 lines (default) of a file** respectively:
+Sometimes you may need to read just the first or last lines of a file, for example because you just need to know the header of an output or the ending time of a certain analysis. You can then use <code>head</code> and <code>tail</code> to **print to the stdout the first and last 10 lines (default) of a file** respectively ([here](example_files/Dmel.mito.genome.gb) is the <code>Dmel.mito.genome.gb</code> file):
 ```bash
 #you can specify the number of lines to print using the flag -n
 $ head -n 32 Dmel.mito.genome.gb #print the header of the genbank file
