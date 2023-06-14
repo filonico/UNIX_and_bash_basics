@@ -87,7 +87,7 @@ $ exit
 ```
 > Use <code>ssh</code> to login to remote machines
 
-[↑Table of contents↑](#Table-of-contents)
+[**↑** Table of contents **↑**](#Table-of-contents)
 
 ## Basic commands to manage directories and files
 ### pwd, cd and mkdir to manage directories
