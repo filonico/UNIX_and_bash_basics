@@ -3,7 +3,7 @@ This repository is meant to introduce trainee students of the EVO•COM group of
 
 **Enjoy!**
 
-**Table of contents**
+## Table of contents
   - [UNIX, Linux and Bash: let's make things clear](#unix-linux-and-bash-lets-make-things-clear)
     - [UNIX is a family of operating systems](#unix-is-a-family-of-operating-systems)
     - [GNU/Linux is a UNIX-like operating system](#gnulinux-is-a-unix-like-operating-system)
@@ -87,7 +87,7 @@ $ exit
 ```
 > Use <code>ssh</code> to login to remote machines
 
-[Go to the beginning](#UNIX_and_bash_basics#unix-and-bash-basics-for-trainee-students)
+[Return to the beginning](#Table-of-contents)
 
 ## Basic commands to manage directories and files
 ### pwd, cd and mkdir to manage directories
