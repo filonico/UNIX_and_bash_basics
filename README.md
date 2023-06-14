@@ -25,7 +25,7 @@ This repository is meant to introduce trainee students of the EVO•COM group of
   - [*Unix in a nutshell*](https://www.oreilly.com/library/view/unix-in-a/0596100299/) by Arnold Robbins (2005), O'Reilly Media, Inc.
   - [*Bioinformatics data skills*](https://www.oreilly.com/library/view/bioinformatics-data-skills/9781449367480/) by Vince Buffalo (2015), O'Reilly Media, Inc.
   - [*Bash scripting cheatsheet*](https://devhints.io/bash) by Rico Sta. Cruz.
-  - Take also a look at [notes by Mariangela Iannello](https://github.com/MariangelaIannello/didattica) on bash basics, scripting and transcriptome assembly/annotation pipelines!!
+  - Take also a look at [notes by Mariangela Iannello](https://github.com/MariangelaIannello/didattica) (bash basics, scripting and transcriptome assembly/annotation pipelines, gene differential expression) and [notes by Jacopo Martelossi](https://github.com/jacopoM28/CompOmics_Tutorship/tree/main) (bash basics, scripting, genome assembly and annotation, orthology inference)!!
 
 ## UNIX, Linux and Bash: let's make things clear
 When first approaching bioinformatics, biologists may tend to confuse and use indiscriminately the words "Unix", "Linux" and "Bash". However, each of them refers to *different concepts*.
