@@ -14,8 +14,9 @@ This repository is meant to introduce trainee students of the EVO•COM group of
     - [pwd, cd and mkdir to manage directories](#pwd-cd-and-mkdir-to-manage-directories)
     - [cat, less, head and tail to read file content](#cat-less-head-and-tail-to-read-file-content)
     - [cp and mv to copy/paste and cut/paste files](#cp-and-mv-to-copypaste-and-cutpaste-files)
-  - Bash scripting (|, >, &&, ||, variables, for cycle, if statements, while cycle,...)
-  - Find, find and replace and working with "tables" (grep, sed, awk)
+    - [g(un)zip and (un)zip to work with compressed files](#gunzip-and-unzip-to-work-with-compressed-files)
+  - [Bash scripting](#bash-scripting)
+  - Find in a file, find and replace and working with "tables" (grep, sed, awk)
   - Working with conda environments
   - Working in screen sessions
   - Working with git (git clone, git push, git pull, git add,...)
@@ -127,7 +128,7 @@ You can now understand the difference between an **absolute path** and a **relat
 If you want to create a new directory in your current location just type:
 
 ```bash
-$ mkdir your/directory/name
+$ mkdir new_directory/
 ```
 where <code>mkdir</code> stands for *<ins>m</ins>a<ins>k</ins>e <ins>dir</ins>ectory*.
 
@@ -145,7 +146,7 @@ Through the shell you are going to interact mainly with text files, such as fast
 One of the most common way to inspect a file is by using <code>cat</code>, which will **print the content of your file in the stdout** ([here](example_files/Dmel.COI.fasta) is the <code>Dmel.COI.fasta</code> file):
 ```bash
 #inspect the fasta file containing the protein sequence from the COI gene of Drosophila melanogaster 
-$ cat Dmel.COI.fasta
+$ cat example_files/Dmel.COI.fasta
 >YP_009047267.1 cytochrome c oxidase subunit I, partial (mitochondrion) [Drosophila melanogaster]
 SRQWLFSTNHKDIGTLYFIFGAWAGMVGTSLSILIRAELGHPGALIGDDQIYNVIVTAHAFIMIFFMVMP
 IMIGGFGNWLVPLMLGAPDMAFPRMNNMSFWLLPPALSLLLVSSMVENGAGTGWTVYPPLSAGIAHGGAS
@@ -165,20 +166,20 @@ In these cases, you would like to rely on <code>less</code>, which will **print 
 ```bash
 #imagine you want to extract all the gene IDs of the Drosophila mitochondrial proteins from the relative fasta file
 #the following command lines are just descriptive of the action we want to take
-$ extract_the_headers Dmel.mito.proteins.fasta | less
-$ extract_the_headers Dmel.mito.proteins.fasta | remove_unwanted_information | less
-$ extract_the_headers Dmel.mito.proteins.fasta | remove_unwanted_information | convert_to_tsv_format | less
+$ extract_the_headers example_files/Dmel.mito.proteins.fasta | less
+$ extract_the_headers example_files/Dmel.mito.proteins.fasta | remove_unwanted_information | less
+$ extract_the_headers example_files/Dmel.mito.proteins.fasta | remove_unwanted_information | convert_to_tsv_format | less
 ```
-Both <code>cat</code> and <code>less</code> can be used also to **read gzipped files** by using their sister commands <code>zcat</code> and <code>zless</code>, respectively (we will see how to (un)compress files in a following section).
+Both <code>cat</code> and <code>less</code> can be used also to **read gzipped files** by using their sister commands <code>zcat</code> and <code>zless</code>, respectively (we will see how to (un)compress files in a [following section](#gunzip-and-unzip-to-work-with-compressed-files)).
 
 Sometimes you may need to read just the first or last lines of a file, for example because you just need to know the header of an output or the ending time of a certain analysis. You can then use <code>head</code> and <code>tail</code> to **print to the stdout the first and last 10 lines (default) of a file** respectively ([here](example_files/Dmel.mito.genome.gb) is the <code>Dmel.mito.genome.gb</code> file):
 ```bash
 #you can specify the number of lines to print using the flag -n
-$ head -n 32 Dmel.mito.genome.gb #print the header of the genbank file
-$ tail -n 328 Dmel.mito.genome.gb #print the sequence of the genbank file
+$ head -n 32 example_files/Dmel.mito.genome.gb #print the header of the genbank file
+$ tail -n 328 example_files/Dmel.mito.genome.gb #print the sequence of the genbank file
 #you can use head/tail to remove the last/first N lines from a file
-$ head -n -328 Dmel.mito.genome.gb #remove the last line from the genbank file
-$ tail -n +2 Dmel.mito.genome.gb #remove the first comment line from the genbank file
+$ head -n -328 example_files/Dmel.mito.genome.gb #remove the last line from the genbank file
+$ tail -n +2 example_files/Dmel.mito.genome.gb #remove the first comment line from the genbank file
 ```
 > Use <code>cat</code> to print the entire content of a file to the stdout.
 > 
@@ -218,5 +219,70 @@ where <code>mv</code> stands for *<ins>m</ins>o<ins>v</ins>e*.
 > Use <code>mv</code> to cut and paste files or to rename them in their current directory.
 
 [↑ Table of contents ↑](#Table-of-contents)
-dsadassadsad
-dasdasdas
+
+## g(un)zip and (un)zip to work with compressed files
+
+As we have already pointed out, bioinformatic files are often very big in size (sometimes dozens of gigabytes) while our storage capacities are often (much) more restricted. Large files are also difficult to handle when being transferred to collegues via email or other protocols. Thus, it is foundamental that you carefully store your files in a way that allows you to save as much bytes as possible.
+
+To this purpose, you can easily **compress your files** by using <code>gzip</code>, a <ins>zip</ins>ping program which was originally intended for <ins>G</ins>NU users. With <code>gzip</code> you can also choose the compression ratio by specifying a number between <code>1</code> (low compression ratio) and <code>9</code> (high compression ratio; default is <code>6</code>):
+```bash
+#gzip your very very big file
+$ gzip a_very_big_file.txt
+#gzip your very very big file with a low compression ratio (and a high speed)
+$ gzip -1 a_very_big_file.txt
+#gzip your very very big file with a high compression ratio (and a low speed)
+$ gzip -9 a_very_big_file.txt
+```
+Note that <code>gzip</code> compresses your file inplace, thus replacing the original uncompressed file (and appending a <code>.gz</code> extension). Can you come up with a solution to this, imaging that you want to create a new file instead of replacing the original?
+
+Another useful command to zip file is (surprisingly) <code>zip</code>, which is meant to create compressed file with a <code>.zip</code> extension (very common in a Windows environment):
+```bash
+#zip your very very big file
+$ zip a_zipped_file.zip a_very_big_file.txt
+```
+However, in this case the <code>zip</code> command will not replace your original file and thus also requires the filename of your compressed file.
+
+Besides compressing, we may clearly also want to **uncompress** some of our files. In this case we can use the <code>gunzip</code> and <code>unzip</code> commands to work with <code>.gz</code> and <code>.zip</code> files, respectively:
+```bash
+#gunzip a .gz file
+$ gunzip a_gzipped_file.gz
+#unzip a .zip file
+$ unzip a_zipped_file.zip
+```
+
+During your analyses, you will run into gzipped files basically every day. Thus, you may wonder how to use such files without uncompressing them, just to avoid typing an additional command line or because you are running out of space. Fortunately, many bash commands come with certain build-in functions to **directly handle gzipped files**, such as <code>zless</code>, <code>zcat</code> (see the [previous section](#cat-less-head-and-tail-to-read-file-content) about them), <code>zgrep</code> (we will see this command in a following section), and <code>zdiff</code> ([here](example_files/Dmel_GCF.000001215.4_genomic.fna.gz) is the <code>Dmel_GCF.000001215.4_genomic.fna.gz file</code>):
+```bash
+#print the entire content of a gzip file to the stdout
+$ zcat example_files/Dmel_GCF.000001215.4_genomic.fna.gz
+>NC_004354.4 Drosophila melanogaster chromosome X
+GAATTCGTCAGAAATGAgctaaacaaatttaaatcattaaatgcGAGCGGCGAATCCGGAAACAGCAACTTCAAACCAGT
+CACTCTGGCTGAACTAAATGGCCTGATAAACTCACTGGAATTAAAGAAAGCCCCAGGAACTGACAATCTTAACAACAAGA
+CCATAATAAACTTACCTACAAAGGCCAgaatatatttaatacttATTTATAACAACATCCTGAGAACTGGACATTTCCCG
+AACAAATGGAAGCACGCTAGCATCTCAATGATTCCCAAACCAGGGAAATCACCATTTGCTCTAAATTCATACCGCCCAAT
+CAGCTTACTCTCTGGTCTTTCCAAACTACTCGAAAGAATACTACTGAAACGACTGTATGACATTGACTCTTTTGCCAAAG
+CAATCCCTTCCCATCAATTTGGTTTCAGAAAGGATCATGGAGCGGAACATCAGCTGGCCAGGGTGACCCAATTTATTCTA
+AAAGCTTTTGATGAAAAAGATGTCTGTTCTGCCACATTCCTTGACATTACGGAAGCCTTTGACCGAGTATGGCACGACGG
+CTTGCTATATAAACTATCCAGACTCATCCCCAGATACCTATTCGACCTACTTGAAAACTATTTATCTAATAGAACCTTCT
+CAGTAAGGATCGACGGTGAAACAACGTCTAGGATAGGTAATATTAGAGCAGGAGTGCCCCAGGGCAGCATACTGGGACCG
+GTCCTCTACTCAATATACTCATCCGACATGCCCTATCCCATCGTAAAAGACTATATGCGTAACATATCCTTCCCTGATTA
+CCACCCAACTAATATTATCTTAGCTACATATGCAGATGATACCATAATTCTTAGCCGGTCCAAATATACCAAGCTTGCGA
+TCAACCTAAATCAAAACTACCTTAACGTCTTCTGTAGGTGGTCAAAAAAATGGGACATAGCaattaatgcaaaaaaaaCC
+GGACACATTCTTTTCTCcctaaaaaaagaacaaactAATATATACACTCCCCCACTAATCAACGGACAAAGAGCTGCCAA
+ACTAAACAAACAACGCTATCTCGGACTTATGCTAGACAGAAGACTGACCTTTTGTGCACACATGACGCTGCTAAAGGGAA
+AGACTATAGCTGCATATAAAAAACTGGAATGGCTAATAGGAAAAAACAGCCACCTacccaaaaatgcaaaaattctCCTC
+TGGAAGCAAATTGTCTCCCCCATCTGGCATTACGCCATAGCAATCTGGGGCTCGCTGGTATCTGACACCCAAGCAAAGAA
+AATTCAAACAATGGAAAACAAATACATCAGACGAATCATAAACGCCAGCAGATACACGAGACAAGCAGACATAAGGACAA
+AATATaacattaaatcatttgatGAAATTTTTGACAAAGCAAGCCAACGCTACGCCAACTCCCTCACTGACCATGAAAAC
+CCTTTAATATATGACCTCCTTATCAACGCCTACAAGCCGAACAGACTGGAACTAAGCAAAAACAGATACGTCAAGCaatt
+...
+#print the content of a gzip file a screen at a time
+$ zless example_files/Dmel_GCF.000001215.4_genomic.fna.gz
+```
+
+[↑ Table of contents ↑](#Table-of-contents)
+
+# Bash scripting
+
+|, >, &&, ||, variables, for cycle, if statements, while cycle,...
+
+[↑ Table of contents ↑](#Table-of-contents)
