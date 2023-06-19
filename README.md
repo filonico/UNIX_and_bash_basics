@@ -3,25 +3,44 @@ This repository is meant to introduce trainee students of the EVO•COM group of
 
 **Enjoy!**
 
-## Table of contents
-  - [UNIX, Linux and Bash: let's make things clear](#unix-linux-and-bash-lets-make-things-clear)
+## Table of contents- 
+  - **[Command cheat sheet](#command-cheat-sheet)**
+  - **[UNIX, Linux and Bash: let's make things clear](#unix-linux-and-bash-lets-make-things-clear)**
     - [UNIX is a family of operating systems](#unix-is-a-family-of-operating-systems)
     - [GNU/Linux is a UNIX-like operating system](#gnulinux-is-a-unix-like-operating-system)
     - [The shell is a command-line interpreter](#the-shell-is-a-command-line-interpreter)
     - [Bash is a UNIX shell and a command language](#bash-is-a-unix-shell-and-a-command-language)
-  - [Login to a remote machine (ssh)](#login-to-a-remote-machine-or-server)
-  - [Basic commands to manage directories and files](#basic-commands-to-manage-directories-and-files)
+  - **[Login to a remote machine (ssh)](#login-to-a-remote-machine-or-server)**
+  - **[Basic commands to manage directories and files](#basic-commands-to-manage-directories-and-files)**
     - [<code>pwd</code>, <code>cd</code> and <code>mkdir</code> to manage directories](#pwd-cd-and-mkdir-to-manage-directories)
     - [<code>cat</code>, <code>less</code>, <code>head</code> and <code>tail</code> to read file content](#cat-less-head-and-tail-to-read-file-content)
     - [<code>cp</code> and <code>mv</code> to copy/paste and cut/paste files](#cp-and-mv-to-copypaste-and-cutpaste-files)
     - [<code>gzip</code>/<code>gunzip</code> and <code>zip</code>/<code>unzip</code> to work with compressed files](#gzipgunzip-and-zipunzip-to-work-with-compressed-files)
     - [ <code>tar</code> to compress directories and <code>man</code> to inspect the manual of a command](#tar-to-compress-directories-and-man-to-inspect-the-manual-of-a-command)
-  - [Bash scripting](#bash-scripting)
-  - Find in a file, find and replace and working with "tables" (grep, sed, awk)
-  - Working with conda environments
-  - Working in screen sessions
-  - Working with git (git clone, git push, git pull, git add,...)
-    
+  - **[Bash scripting](#bash-scripting)**
+  - **Find in a file, find and replace and working with "tables" (grep, sed, awk)**
+  - **Working with conda environments**
+  - **Working in screen sessions**
+  - **Working with git (git clone, git push, git pull, git add,...)**
+
+## Command cheat sheet
+| Command | Meaning | Description |
+| --- | --- | --- |
+| <code>man</code> | | |
+| <code>pwd</code> | | |
+| <code>cd</code> | | |
+| <code>mkdir</code> | | |
+| <code>cat</code> | | |
+| <code>less</code> | | |
+| <code>head</code> | | |
+| <code>tail</code> | | |
+| <code>cp</code> | | |
+| <code>mv</code> | | |
+| <code>gzip</code> | | |
+| <code>gunzip</code> | | |
+| <code>zip</code> | | |
+| <code>unzip</code> | | |
+| <code>tar</code> | | |
 
 ## Useful textbooks and resources
   - [*Unix in a nutshell*](https://www.oreilly.com/library/view/unix-in-a/0596100299/) by Arnold Robbins (2005), O'Reilly Media, Inc.
