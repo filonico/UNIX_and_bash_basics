@@ -3,7 +3,7 @@ This repository is meant to introduce trainee students of the EVO•COM group of
 
 **Enjoy!**
 
-## Table of contents- 
+## Table of contents
   - **[Command cheat sheet](#command-cheat-sheet)**
   - **[UNIX, Linux and Bash: let's make things clear](#unix-linux-and-bash-lets-make-things-clear)**
     - [UNIX is a family of operating systems](#unix-is-a-family-of-operating-systems)
