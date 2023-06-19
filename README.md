@@ -279,7 +279,35 @@ CCTTTAATATATGACCTCCTTATCAACGCCTACAAGCCGAACAGACTGGAACTAAGCAAAAACAGATACGTCAAGCaatt
 $ zless example_files/Dmel_GCF.000001215.4_genomic.fna.gz
 ```
 
+> Use <code>gzip</code> and <code>zip</code> to compress files into a <code>.gzip</code> or a <code>.zip</code> format, respectively.
+>
+> Use <code>gunzip</code> and <code>unzip</code> to uncompress files from a <code>.gzip</code> or a <code>.zip</code> format, respectively.
+>
+>Use <code>zcat</code>, <code>zles</code> and <code>zgrep</code> to work directly with compressed files.
+
 [↑ Table of contents ↑](#Table-of-contents)
+
+## tar to menage (and compress) directories
+We have just seen how we can save space up by compressing single files. But what about compressing an entire directory? What if you want to archive your recent research (now published on *Nature*) on the gene-family dynamics in hematophagous dipterans? Unfortunately, <code>gzip</code> and <code>zip</code> can basically manage only single files, so you have to rely on other utilities.
+
+<code>tar</code> is a command that allows you to **organize a whole directory** into a single *<ins>t</ins>ape <ins>ar</ins>chive*, which can be subsequently compressed. <code>tar</code> can archive and compress a whole directory all in the same command line and you just need to specify the name of the output compressed archive and the input directory:
+```bash
+#archive and compress our example_files/ directory
+tar -c -v -z -f example_files.tar.gz example_file/
+#or, in short
+tar -cvzf example_files.tar.gz example_file/
+```
+where <code>-c</code> instructs the command to *<ins>c</ins>reate* a new archive, <code>-v</code> instructs to be *<ins>v</ins>erbose* on the stdout, <code>-z</code> instructs to *g<ins>z</ins>ip* the archive, and <code>-f</code> specifies the output *<ins>f</ins>ile* name.
+
+Here you have just been introduced to **flags** (<code>-c</code>, <code>-v</code>, <code>-f</code>, etc., are all flags of <code>tar</code>), i.e., options that can be passed to the main program to modify its behaviour. Just by changing the various accepted flags, <code>tar</code> can accomplish different tasks. For example, you can use <code>tar</code> also to **un-compress and un-archive** a directory:
+```bash
+#archive and compress our example_files/ directory
+tar -v -x -f example_files.tar.gz
+#or, in short
+tar -vxf example_files.tar.gz
+```
+where <code>-x</code> instructs the command to *e<ins>x</ins>tract* (uncompress) the gzip archive.
+
 
 # Bash scripting
 
