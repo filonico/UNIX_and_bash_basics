@@ -14,7 +14,7 @@ This repository is meant to introduce trainee students of the EVO•COM group of
     - [<code>pwd</code>, <code>cd</code> and <code>mkdir</code> to manage directories](#pwd-cd-and-mkdir-to-manage-directories)
     - [<code>cat</code>, <code>less</code>, <code>head</code> and <code>tail</code> to read file content](#cat-less-head-and-tail-to-read-file-content)
     - [<code>cp</code> and <code>mv</code> to copy/paste and cut/paste files](#cp-and-mv-to-copypaste-and-cutpaste-files)
-    - [<code>gzip</code>/<code>gunzip</code> and <code>zip</code>/<code>unzip</code> to work with compressed files](#gzip-gunzip-and-zip-unzip-to-work-with-compressed-files)
+    - [<code>gzip</code>/<code>gunzip</code> and <code>zip</code>/<code>unzip</code> to work with compressed files](#gzipgunzip-and-zipunzip-to-work-with-compressed-files)
     - [ <code>tar</code> to compress directories and <code>man</code> to inspect the manual of a command](#tar-to-compress-directories-and-man-to-inspect-the-manual-of-a-command)
   - [Bash scripting](#bash-scripting)
   - Find in a file, find and replace and working with "tables" (grep, sed, awk)
@@ -319,6 +319,8 @@ $ man tar
 >Use <code>tar -xzf</code> to uncompress a gzip directory
 >
 >Usa <code>man</code> to inspect the manual of a UNIX command
+
+[↑ Table of contents ↑](#Table-of-contents)
 
 # Bash scripting
 
