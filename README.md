@@ -10,11 +10,12 @@ This repository is meant to introduce trainee students of the EVO•COM group of
     - [The shell is a command-line interpreter](#the-shell-is-a-command-line-interpreter)
     - [Bash is a UNIX shell and a command language](#bash-is-a-unix-shell-and-a-command-language)
   - [Login to a remote machine (ssh)](#login-to-a-remote-machine-or-server)
-  - [Basic commands to manage directories and files (pwd, cd, mkdir, mv, cp, gzip, tar,...)](#basic-commands-to-manage-directories-and-files)
-    - [pwd, cd and mkdir to manage directories](#pwd-cd-and-mkdir-to-manage-directories)
-    - [cat, less, head and tail to read file content](#cat-less-head-and-tail-to-read-file-content)
-    - [cp and mv to copy/paste and cut/paste files](#cp-and-mv-to-copypaste-and-cutpaste-files)
-    - [g(un)zip and (un)zip to work with compressed files](#gunzip-and-unzip-to-work-with-compressed-files)
+  - [Basic commands to manage directories and files](#basic-commands-to-manage-directories-and-files)
+    - [<code>pwd</code>, <code>cd</code> and <code>mkdir</code> to manage directories](#pwd-cd-and-mkdir-to-manage-directories)
+    - [<code>cat</code>, <code>less</code>, <code>head</code> and <code>tail</code> to read file content](#cat-less-head-and-tail-to-read-file-content)
+    - [<code>cp</code> and <code>mv</code> to copy/paste and cut/paste files](#cp-and-mv-to-copypaste-and-cutpaste-files)
+    - [<code>gzip</code>/<code>gunzip</code> and <code>zip</code>/<code>unzip</code> to work with compressed files](#gzip-gunzip-and-zip-unzip-to-work-with-compressed-files)
+    - [ <code>tar</code> to compress directories and <code>man</code> to inspect the manual of a command](#tar-to-compress-directories-and-man-to-inspect-the-manual-of-a-command)
   - [Bash scripting](#bash-scripting)
   - Find in a file, find and replace and working with "tables" (grep, sed, awk)
   - Working with conda environments
@@ -77,7 +78,7 @@ Many UNIX shells exhist nowadays, but the most popular is the <ins>B</ins>ourne-
   
 [↑ Table of contents ↑](#Table-of-contents)
 
-## Login to a remote machine or server
+## <code>ssh</code> to login to a remote machine or server
 When dealing with bioinformatic data, it may be very unpleasant to work in local computers (or work stations), mostly because of the great amount of computing power that is required to run several processes. This means that most of the time bioinformaticians use to work on remote machine (being them other work stations, servers or clusters), which provide large computing resources and allow to run memory-demanding tasks.
 
 As their name suggest, remote machines must be accessed remotely. The most common way is to use the *<ins>s</ins>ecure <ins>sh</ins>ell* (SSH), which is an **encrypted**, **UNIX-ubiquitous connection**. To **connect and login** to a remote machine then just type:
@@ -97,7 +98,7 @@ $ exit
 [↑ Table of contents ↑](#Table-of-contents)
 
 ## Basic commands to manage directories and files
-### pwd, cd and mkdir to manage directories
+### <code>pwd</code>, <code>cd</code> and <code>mkdir</code> to manage directories
 Once you have logged-in in a remote machine (or just opened the shell on your local computer), you may be wondering in which remote directory you are. To know the  exact location you are working in (i.e., the working directory), just type:
 
 ```bash
@@ -140,7 +141,7 @@ where <code>mkdir</code> stands for *<ins>m</ins>a<ins>k</ins>e <ins>dir</ins>ec
 
 [↑ Table of contents ↑](#Table-of-contents)
 
-### cat, less, head and tail to read file content
+### <code>cat</code>, <code>less</code>, <code>head</code> and <code>tail</code> to read file content
 Through the shell you are going to interact mainly with text files, such as fastq, fasta, vcf and gff files, so it's important for you to know how to read (and visualize) what's inside of them. There are many ways to fulfil this purpose and each of them fits with different needs.
 
 One of the most common way to inspect a file is by using <code>cat</code>, which will **print the content of your file in the stdout** ([here](example_files/Dmel.COI.fasta) is the <code>Dmel.COI.fasta</code> file):
@@ -193,7 +194,7 @@ $ tail -n +2 example_files/Dmel.mito.genome.gb #remove the first comment line fr
 
 [↑ Table of contents ↑](#Table-of-contents)
 
-### cp and mv to copy/paste and cut/paste files
+### <code>cp</code> and <code>mv</code> to copy/paste and cut/paste files
 In bioinformatics it is usually very important to maintain one (or even more) backup copy(ies) of the files you are working with, in order to not risk to lose your work. Thus, it is advisable to **copy** the original files and **paste** them in a different location on your storage, by using:
 ```bash
 #copy a file to a different location and keep the original name
@@ -220,7 +221,7 @@ where <code>mv</code> stands for *<ins>m</ins>o<ins>v</ins>e*.
 
 [↑ Table of contents ↑](#Table-of-contents)
 
-## g(un)zip and (un)zip to work with compressed files
+## <code>gzip</code>/<code>gunzip</code> and <code>zip</code>/<code>unzip</code> to work with compressed files
 
 As we have already pointed out, bioinformatic files are often very big in size (sometimes dozens of gigabytes) while our storage capacities are often (much) more restricted. Large files are also difficult to handle when being transferred to collegues via email or other protocols. Thus, it is foundamental that you carefully store your files in a way that allows you to save as much bytes as possible.
 
@@ -287,27 +288,37 @@ $ zless example_files/Dmel_GCF.000001215.4_genomic.fna.gz
 
 [↑ Table of contents ↑](#Table-of-contents)
 
-## tar to menage (and compress) directories
+## <code>tar</code> to compress directories and <code>man</code> to inspect the manual of a command
 We have just seen how we can save space up by compressing single files. But what about compressing an entire directory? What if you want to archive your recent research (now published on *Nature*) on the gene-family dynamics in hematophagous dipterans? Unfortunately, <code>gzip</code> and <code>zip</code> can basically manage only single files, so you have to rely on other utilities.
 
 <code>tar</code> is a command that allows you to **organize a whole directory** into a single *<ins>t</ins>ape <ins>ar</ins>chive*, which can be subsequently compressed. <code>tar</code> can archive and compress a whole directory all in the same command line and you just need to specify the name of the output compressed archive and the input directory:
 ```bash
 #archive and compress our example_files/ directory
-tar -c -v -z -f example_files.tar.gz example_file/
+$ tar -c -v -z -f example_files.tar.gz example_file/
 #or, in short
-tar -cvzf example_files.tar.gz example_file/
+$ tar -cvzf example_files.tar.gz example_file/
 ```
 where <code>-c</code> instructs the command to *<ins>c</ins>reate* a new archive, <code>-v</code> instructs to be *<ins>v</ins>erbose* on the stdout, <code>-z</code> instructs to *g<ins>z</ins>ip* the archive, and <code>-f</code> specifies the output *<ins>f</ins>ile* name.
 
 Here you have just been introduced to **flags** (<code>-c</code>, <code>-v</code>, <code>-f</code>, etc., are all flags of <code>tar</code>), i.e., options that can be passed to the main program to modify its behaviour. Just by changing the various accepted flags, <code>tar</code> can accomplish different tasks. For example, you can use <code>tar</code> also to **un-compress and un-archive** a directory:
 ```bash
 #archive and compress our example_files/ directory
-tar -v -x -f example_files.tar.gz
+$ tar -v -x -f example_files.tar.gz
 #or, in short
-tar -vxf example_files.tar.gz
+$ tar -vxf example_files.tar.gz
 ```
 where <code>-x</code> instructs the command to *e<ins>x</ins>tract* (uncompress) the gzip archive.
+To know all the flags available for a certain UNIX tool, you can rely on the <code>man</code> command, which will print to the stdout the *<ins>man</ins>ual* of your interest:
+```bash
+#print the manual of tar
+$ man tar
+```
 
+>Use <code>tar -cvzf</code> to compress a whole directory
+>
+>Use <code>tar -xzf</code> to uncompress a gzip directory
+>
+>Usa <code>man</code> to inspect the manual of a UNIX command
 
 # Bash scripting
 
