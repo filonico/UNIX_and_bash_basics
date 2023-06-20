@@ -19,6 +19,7 @@ This repository is meant to introduce trainee students of the EVO•COM group of
     - [ <code>tar</code> to compress directories and <code>man</code> to inspect the manual of a command](#tar-to-compress-directories-and-man-to-inspect-the-manual-of-a-command)
   - **[Bash scripting](#bash-scripting)**
   - **[Find patterns in files, replace them and work with tables](#find-patterns-in-files-replace-them-and-work-with-tables)**
+    - [<code>grep</code> to find patterns in files](#grep-to-find-patterns-in-files)
   - **Working with conda environments**
   - **Working in screen sessions**
   - **Working with git (git clone, git push, git pull, git add,...)**
