@@ -18,7 +18,7 @@ This repository is meant to introduce trainee students of the EVO•COM group of
     - [<code>gzip</code>/<code>gunzip</code> and <code>zip</code>/<code>unzip</code> to work with compressed files](#gzipgunzip-and-zipunzip-to-work-with-compressed-files)
     - [ <code>tar</code> to compress directories and <code>man</code> to inspect the manual of a command](#tar-to-compress-directories-and-man-to-inspect-the-manual-of-a-command)
   - **[Bash scripting](#bash-scripting)**
-  - **Find in a file, find and replace and working with "tables" (grep, sed, awk)**
+  - **[Find patterns in files, replace them and work with tables](#find-patterns-in-files-replace-them-and-work-with-tables)**
   - **Working with conda environments**
   - **Working in screen sessions**
   - **Working with git (git clone, git push, git pull, git add,...)**
@@ -94,7 +94,7 @@ Every text command you type in the shell is called the **standard input** (stdin
 [↑ Table of contents ↑](#Table-of-contents)
 
 ### Bash is a UNIX shell and a command language
-Many UNIX shells exhist nowadays, but the most popular is the <ins>B</ins>ourne-<ins>A</ins>gain <ins>Sh</ins>ell (**Bash**), a replacement of the original Bourne shell (sh). Bash is essentially a command and programming language and, as such, it uses its own syntax and grammar. So, be aware that the same command may not work in the same way between different shells (even between UNIX shells). Bash, for example, uses a dollar symbol (**<code>$</code>**) as its own prompt, that is, when the shell is ready to receive a command it will display a <code>$</code> (not by chance, the <code>$</code> is also present in the bash logo) . On the contrary, a C shell will display a <code>%</code> as a prompt.
+Many UNIX shells exhist nowadays, but the most popular is the <ins>B</ins>ourne-<ins>A</ins>gain <ins>SH</ins>ell (**Bash**), a replacement of the original Bourne shell (sh). Bash is essentially a command and programming language and, as such, it uses its own syntax and grammar. So, be aware that the same command may not work in the same way between different shells (even between UNIX shells). Bash, for example, uses a dollar symbol (**<code>\$</code>**) as its own prompt, that is, when the shell is ready to receive a command it will display a <code>\$</code> (not by chance, the <code>$</code> is also present in the bash logo) . On the contrary, a C shell will display a <code>%</code> as a prompt.
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/72141380/199702109-62ad5c3f-72a1-438d-9752-c0dc32bd4750.png", height=100>
@@ -129,22 +129,25 @@ Once you have logged-in in a remote machine (or just opened the shell on your lo
 $ pwd
 /home/filonico
 ```
-which stands for *<ins>p</ins>rint <ins>w</ins>orking <ins>d</ins>irectory*. Usually, when opening the shell, you enter by default your <code>home</code> directory, which is shortened by the symbol <code>~</code>.
+which stands for *<ins>P</ins>rint <ins>W</ins>orking <ins>D</ins>irectory*. Usually, when opening the shell, you enter by default your <code>home</code> directory, which is shortened by the symbol <code>~</code>.
 
 If you want to change your working directory and navigate thourgh the directories, for example to reach the desktop of your local machine, just type:
 
 ```bash
 $ cd /path/to/your/Desktop/
 ```
-where <code>cd</code> stands for *<ins>c</ins>hange <ins>d</ins>irectory*. Some other useful <code>cd</code> commands are:
+where <code>cd</code> stands for *<ins>C</ins>hange <ins>D</ins>irectory*. Some other useful <code>cd</code> commands are:
 
 ```bash
 #go to the parent directory
 $ cd ..
+
 #go to the previous directory
 $ cd -
+
 #go to the root directory
 $ cd /
+
 #go to the home directory
 $ cd
 ```
@@ -155,7 +158,7 @@ If you want to create a new directory in your current location just type:
 ```bash
 $ mkdir new_directory/
 ```
-where <code>mkdir</code> stands for *<ins>m</ins>a<ins>k</ins>e <ins>dir</ins>ectory*.
+where <code>mkdir</code> stands for *<ins>M</ins>a<ins>K</ins>e <ins>DIR</ins>ectory*.
 
 > Use <code>pwd</code> to print the absolute path of the working directory.
 > 
@@ -202,6 +205,7 @@ Sometimes you may need to read just the first or last lines of a file, for examp
 #you can specify the number of lines to print using the flag -n
 $ head -n 32 example_files/Dmel.mito.genome.gb #print the header of the genbank file
 $ tail -n 328 example_files/Dmel.mito.genome.gb #print the sequence of the genbank file
+
 #you can use head/tail to remove the last/first N lines from a file
 $ head -n -328 example_files/Dmel.mito.genome.gb #remove the last line from the genbank file
 $ tail -n +2 example_files/Dmel.mito.genome.gb #remove the first comment line from the genbank file
@@ -223,21 +227,24 @@ In bioinformatics it is usually very important to maintain one (or even more) ba
 ```bash
 #copy a file to a different location and keep the original name
 $ cp your_file.txt /location/of/the/copy/of/your_file.txt
+
 #copy a file to a different location and rename the copy
 $ cp your_file.txt /location/of/the/copy/of/your_file_copy.txt
 ```
-where <code>cp</code> stands obviously for *<ins>c</ins>o<ins>p</ins>y*.
+where <code>cp</code> stands obviously for *<ins>C</ins>o<ins>P</ins>y*.
   
 However, the storage memory is not limitless, so sometimes it is more convenient to **cut** your files and **paste** them in a different location on your storage, by usig:
 ```bash
 #move a file to a different location and keep the original name
 $ mv your_file.txt new/location/of/your_file.txt
+
 #move a file to a different location and rename it
 $ mv your_file.txt new/location/of/your_file_new.txt
+
 # if you do not specifiy a different directory, the file will be just renamed
 $ mv your_file.txt your_file_new.txt
 ```
-where <code>mv</code> stands for *<ins>m</ins>o<ins>v</ins>e*.
+where <code>mv</code> stands for *<ins>M</ins>o<ins>V</ins>e*.
   
 > Use <code>cp</code> to copy and paste files.
 > 
@@ -249,12 +256,14 @@ where <code>mv</code> stands for *<ins>m</ins>o<ins>v</ins>e*.
 
 As we have already pointed out, bioinformatic files are often very big in size (sometimes dozens of gigabytes) while our storage capacities are often (much) more restricted. Large files are also difficult to handle when being transferred to collegues via email or other protocols. Thus, it is foundamental that you carefully store your files in a way that allows you to save as much bytes as possible.
 
-To this purpose, you can easily **compress your files** by using <code>gzip</code>, a <ins>zip</ins>ping program which was originally intended for <ins>G</ins>NU users. With <code>gzip</code> you can also choose the compression ratio by specifying a number between <code>1</code> (low compression ratio) and <code>9</code> (high compression ratio; default is <code>6</code>):
+To this purpose, you can easily **compress your files** by using <code>gzip</code>, a <ins>ZIP</ins>ping program which was originally intended for <ins>G</ins>NU users. With <code>gzip</code> you can also choose the compression ratio by specifying a number between <code>1</code> (low compression ratio) and <code>9</code> (high compression ratio; default is <code>6</code>):
 ```bash
 #gzip your very very big file
 $ gzip a_very_big_file.txt
+
 #gzip your very very big file with a low compression ratio (and a high speed)
 $ gzip -1 a_very_big_file.txt
+
 #gzip your very very big file with a high compression ratio (and a low speed)
 $ gzip -9 a_very_big_file.txt
 ```
@@ -271,6 +280,7 @@ Besides compressing, we may clearly also want to **uncompress** some of our file
 ```bash
 #gunzip a .gz file
 $ gunzip a_gzipped_file.gz
+
 #unzip a .zip file
 $ unzip a_zipped_file.zip
 ```
@@ -315,24 +325,26 @@ $ zless example_files/Dmel_GCF.000001215.4_genomic.fna.gz
 ## <code>tar</code> to compress directories and <code>man</code> to inspect the manual of a command
 We have just seen how we can save space up by compressing single files. But what about compressing an entire directory? What if you want to archive your recent research (now published on *Nature*) on the gene-family dynamics in hematophagous dipterans? Unfortunately, <code>gzip</code> and <code>zip</code> can basically manage only single files, so you have to rely on other utilities.
 
-<code>tar</code> is a command that allows you to **organize a whole directory** into a single *<ins>t</ins>ape <ins>ar</ins>chive*, which can be subsequently compressed. <code>tar</code> can archive and compress a whole directory all in the same command line and you just need to specify the name of the output compressed archive and the input directory:
+<code>tar</code> is a command that allows you to **organize a whole directory** into a single *<ins>T</ins>ape <ins>AR</ins>chive*, which can be subsequently compressed. <code>tar</code> can archive and compress a whole directory all in the same command line and you just need to specify the name of the output compressed archive and the input directory:
 ```bash
 #archive and compress our example_files/ directory
 $ tar -c -v -z -f example_files.tar.gz example_file/
+
 #or, in short
 $ tar -cvzf example_files.tar.gz example_file/
 ```
-where <code>-c</code> instructs the command to *<ins>c</ins>reate* a new archive, <code>-v</code> instructs to be *<ins>v</ins>erbose* on the stdout, <code>-z</code> instructs to *g<ins>z</ins>ip* the archive, and <code>-f</code> specifies the output *<ins>f</ins>ile* name.
+where <code>-c</code> instructs the command to *<ins>C</ins>reate* a new archive, <code>-v</code> instructs to be *<ins>V</ins>erbose* on the stdout, <code>-z</code> instructs to *g<ins>Z</ins>ip* the archive, and <code>-f</code> specifies the output *<ins>F</ins>ile* name.
 
 Here you have just been introduced to **flags** (<code>-c</code>, <code>-v</code>, <code>-f</code>, etc., are all flags of <code>tar</code>), i.e., options that can be passed to the main program to modify its behaviour. Just by changing the various accepted flags, <code>tar</code> can accomplish different tasks. For example, you can use <code>tar</code> also to **un-compress and un-archive** a directory:
 ```bash
 #archive and compress our example_files/ directory
 $ tar -v -x -f example_files.tar.gz
+
 #or, in short
 $ tar -vxf example_files.tar.gz
 ```
-where <code>-x</code> instructs the command to *e<ins>x</ins>tract* (uncompress) the gzip archive.
-To know all the flags available for a certain UNIX tool, you can rely on the <code>man</code> command, which will print to the stdout the *<ins>man</ins>ual* of your interest:
+where <code>-x</code> instructs the command to *e<ins>X</ins>tract* (uncompress) the gzip archive.
+To know all the flags available for a certain UNIX tool, you can rely on the <code>man</code> command, which will print to the stdout the *<ins>MAN</ins>ual* of your interest:
 ```bash
 #print the manual of tar
 $ man tar
@@ -351,3 +363,55 @@ $ man tar
 |, >, &&, ||, variables, for cycle, if statements, while cycle,...
 
 [↑ Table of contents ↑](#Table-of-contents)
+
+# Find patterns in files, replace them and work with tables 
+
+## <code>grep</code> to find patterns in files
+We have already said multiple times that files containing biological data and analyses can be really really big (I'm probably getting boring with this kind of sentence). However, of all the lines and words stored inside a text file, you may just need few of them.
+
+For example, let's have a look at the file [<code>Dmag.HPHG.location.gff</code>](example_files/Dmag.HPHG.location.gff). This is a so-called gff (*General Feature Format*) file, which stores informations about different genetic sequences in a genome (see [here](https://www.ensembl.org/info/website/upload/gff3.html) to know more about gffs). Imagine that you just want to extract informations about mRNA features from the gff. <code>grep</code> is the master UNIX command that accomplishes such tasks, as it ***<ins>G</ins>lobally searches for <ins>R</ins>egular <ins>E</ins>xpression and <ins>P</ins>rints out*** the results:
+```bash
+#extract "mRNA" feature from the gff file
+$ grep "mRNA" example_files/Dmag.HPHG.location.gff
+NC_046178.1     Gnomon  mRNA    7392893 7415487 .       +       .       ID=rna-XM_032930663.1;Parent=gene-LOC116924082;Dbxref=GeneID:116924082,Genbank:XM_032930663.1;Name=XM_032930663.1;gene=LOC116924082;model_evidence=Supporting evidence includes similarity to: 9 Proteins%2C and 100%25 coverage of the annotated genomic feature by RNAseq alignments%2C including 31 samples with support for all annotated introns;product=homeotic protein caudal-like%2C transcript variant X1;transcript_id=XM_032930663.1
+NC_046178.1     Gnomon  mRNA    7993982 8009001 .       +       .       ID=rna-XM_032929649.1;Parent=gene-LOC116923174;Dbxref=GeneID:116923174,Genbank:XM_032929649.1;Name=XM_032929649.1;Note=The sequence of the model RefSeq transcript was modified relative to this genomic sequence to represent the inferred CDS: added 86 bases not found in genome assembly;exception=annotated by transcript or proteomic data;gene=LOC116923174;inference=similar to RNA sequence (same species):INSD:GGRO01024192.1;model_evidence=Supporting evidence includes similarity to: 1 2C 8 Proteins%2C and 99%25 coverage of the annotated genomic feature by RNAseq alignments;partial=true;product=homeobox protein abdominal-B-like;transcript_id=XM_032929649.1
+NC_046178.1     Gnomon  mRNA    8014561 8088186 .       +       .       ID=rna-XM_032929652.1;Parent=gene-LOC116923176;Dbxref=GeneID:116923176,Genbank:XM_032929652.1;Name=XM_032929652.1;gene=LOC116923176;model_evidence=Supporting evidence includes similarity to: 1 2C 19 Proteins%2C and 100%25 coverage of the annotated genomic feature by RNAseq alignments%2C including 3 samples with support for all annotated introns;product=homeobox protein abdominal-A homolog%2C transcript variant X1;transcript_id=XM_032929652.1
+NC_046178.1     Gnomon  mRNA    8135891 8151281 .       +       .       ID=rna-XM_032929678.1;Parent=gene-LOC116923203;Dbxref=GeneID:116923203,Genbank:XM_032929678.1;Name=XM_032929678.1;gene=LOC116923203;model_evidence=Supporting evidence includes similarity to: 1 2C 41 Proteins%2C and 100%25 coverage of the annotated genomic feature by RNAseq alignments%2C including 125 samples with support for all annotated introns;product=homeotic protein ultrabithorax-like;transcript_id=XM_032929678.1
+NC_046178.1     Gnomon  mRNA    8151373 8173264 .       +       .       ID=rna-XM_032929672.1;Parent=gene-LOC116923197;Dbxref=GeneID:116923197,Genbank:XM_032929672.1;Name=XM_032929672.1;gene=LOC116923197;model_evidence=Supporting evidence includes similarity to: 1 2C 31 Proteins%2C and 100%25 coverage of the annotated genomic feature by RNAseq alignments%2C including 103 samples with support for all annotated introns;product=putative uncharacterized protein DDB_G0271606;transcript_id=XM_032929672.1
+NC_046178.1     Gnomon  mRNA    8198663 8200917 .       +       .       ID=rna-XM_032929677.1;Parent=gene-LOC116923201;Dbxref=GeneID:116923201,Genbank:XM_032929677.1;Name=XM_032929677.1;gene=LOC116923201;model_evidence=Supporting evidence includes similarity to: 1 2C 20 Proteins%2C and 100%25 coverage of the annotated genomic feature by RNAseq alignments%2C including 41 samples with support for all annotated introns;product=homeobox protein Hox-B5a-like;transcript_id=XM_032929677.1
+NC_046178.1     Gnomon  mRNA    8210283 8219082 .       +       .       ID=rna-XM_032929676.1;Parent=gene-LOC116923200;Dbxref=GeneID:116923200,Genbank:XM_032929676.1;Name=XM_032929676.1;gene=LOC116923200;model_evidence=Supporting evidence includes similarity to: 1 2C 27 Proteins%2C and 100%25 coverage of the annotated genomic feature by RNAseq alignments%2C including 106 samples with support for all annotated introns;product=homeotic protein Sex combs reduced-like;transcript_id=XM_032929676.1
+NC_046178.1     Gnomon  mRNA    8237447 8240876 .       +       .       ID=rna-XM_032929674.1;Parent=gene-LOC116923199;Dbxref=GeneID:116923199,Genbank:XM_032929674.1;Name=XM_032929674.1;gene=LOC116923199;model_evidence=Supporting evidence includes similarity to: 2 2C 25 Proteins%2C and 100%25 coverage of the annotated genomic feature by RNAseq alignments%2C including 63 samples with support for all annotated introns;product=homeobox protein Hox-A4-like%2C transcript variant X1;transcript_id=XM_032929674.1
+NC_046178.1     Gnomon  mRNA    8253193 8275604 .       +       .       ID=rna-XM_032929670.1;Parent=gene-LOC116923194;Dbxref=GeneID:116923194,Genbank:XM_032929670.1;Name=XM_032929670.1;Note=The sequence of the model RefSeq transcript was modified relative to this genomic sequence to represent the inferred CDS: added 1052 bases not found in genome assembly;end_range=8275604,.;exception=annotated by transcript or proteomic data;gene=LOC116923194;inference=similar to RNA sequence (same species):INSD:GDIP01174559.1;model_evidence=Supporting evidence includes similarity to: 1 2C 16 Proteins%2C and 100%25 coverage of the annotated genomic feature by RNAseq alignments%2C including 32 samples with support for all annotated introns;partial=true;product=uncharacterized LOC116923194;transcript_id=XM_032929670.1
+NC_046178.1     Gnomon  mRNA    8288049 8299492 .       +       .       ID=rna-XM_032929671.1;Parent=gene-LOC116923196;Dbxref=GeneID:116923196,Genbank:XM_032929671.1;Name=XM_032929671.1;Note=The sequence of the model RefSeq transcript was modified relative to this genomic sequence to represent the inferred CDS: added 242 bases not found in genome assembly;exception=annotated by transcript or proteomic data;gene=LOC116923196;inference=similar to RNA sequence (same species):INSD:GDIP01019957.1;model_evidence=Supporting evidence includes similarity to: 1 2C 8 Proteins%2C and 99%25 coverage of the annotated genomic feature by RNAseq alignments;partial=true;product=homeotic protein proboscipedia-like;transcript_id=XM_032929671.1
+NC_046178.1     Gnomon  mRNA    8316962 8325421 .       +       .       ID=rna-XM_032929673.1;Parent=gene-LOC116923198;Dbxref=GeneID:116923198,Genbank:XM_032929673.1;Name=XM_032929673.1;gene=LOC116923198;model_evidence=Supporting evidence includes similarity to: 1 2C 11 Proteins%2C and 100%25 coverage of the annotated genomic feature by RNAseq alignments%2C including 113 samples with support for all annotated introns;product=homeobox protein Hox-B1a-like;transcript_id=XM_032929673.1
+NC_046177.1     Gnomon  mRNA    2919198 2920876 .       -       .       ID=rna-XM_032927938.1;Parent=gene-LOC116921584;Dbxref=GeneID:116921584,Genbank:XM_032927938.1;Name=XM_032927938.1;gene=LOC116921584;model_evidence=Supporting evidence includes similarity to: 1 EST%2C 11 Proteins%2C and 100%25 coverage of the annotated genomic feature by RNAseq alignments%2C including 108 samples with support for all annotated introns;product=segmentation protein even-skipped-like;transcript_id=XM_032927938.1
+```
+Once you have instructed <code>grep</code> with the pattern to look for, it will scan your file line by line looking for any occurrence and then print the results to the stdout. Be carefull that the pattern you are looking for is unique, otherwise <code>grep</code> will also... grep unwanted lines.
+
+As we have already seen with [<code>tar</code>](#tar-to-compress-directories-and-man-to-inspect-the-manual-of-a-command), you can change the behaviour of <code>grep</code> by appending many different tags to the main command. If you want to read all the flags that are available for <code>grep</code>, you can look for its manual (*do you remember how to evoke the manual of a UNIX command?*). I'll drop hereafter some of the most-common and useful flags of <code>grep</code> for bioinformaticians:
+```bash
+#grep the pattern and Count the number of matching lines (N.B.: this flag counts the number of matching lines, not of occurrencies)
+$ grep -c "mRNA" example_files/Dmag.HPHG.location.gff
+12
+
+#grep the pattern and inVert the search results, i.e., print all the lines that do not match the pattern
+$ grep -v "mRNA" example_files/Dmag.HPHG.location.gff
+...
+
+#grep the pattern and print also the N lines after each matching, where N is an integer
+#here the example allows you to extract the sequence of the ND5 mitochondrial gene of Drosophila
+$ grep -A1 "ND5" example_files/Dmel.mito.proteins.faa
+>lcl|NC_024511.2_prot_YP_009047273.1_8 [gene=ND5] [locus_tag=Dmel_CG34083] [db_xref=FLYBASE:FBpp0390633] [protein=NADH dehydrogenase subunit 5] [transl_except=(pos:1717..1717,aa:TERM)] [protein_id=YP_009047273.1] [location=complement(6409..8125)] [gbkey=CDS]
+MCSISFVNLISMSLSCFLLSLYFLLNDMIYFIEWELVSLNSMSIVMTFLFDWMSLLFMSFVLMISSLVIFYSKEYMMNDNHINRFIMLVLMFVLSMMLLIISPNLISILLGWDGLGLVSYCLVIYFQNIKSYNAGMLTALSNRIGDVALLLSIAWMLNYGSWNYIFYLEIMQNEFEMLMIGSLVMLAAMTKSAQIPFSSWLPAAMAAPTPVSALVHSSTLVTAGVYLLIRFNIILSTSWLGQLMLLLSGLTMFMAGLGANFEFDLKKIIALSTLSQLGLMMSILSMGFLKLAMFHLLTHALFKALLFMCAGAIIHNMNNSQDIRLMGGLSIHMPLTSACFNVSNLALCGMPFLAGFYSKDMILEIVSISNVNMFSFFLYYFSTGLTVSYSFRLVYYSMTGDLNCGSLNMLNDESWIMLRGMMGLLIMSIIGGSMLNWLIFPFPYMICLPIYMKLLTLFVCIVGGLFGYLISLSNLFFLNKSLFMYNLSTFLGSMWFMPYISTYGMIFYPLNYGQLVVKSFDQGWSEYFGGQHLYQKLSMYSKTLFLMHNNSLKIYLLLFVFWILILLILLFL
+
+#grep the pattern and print also the N lines before each matching, where N is an integer
+#here the example allows you to know the name and NCBI accession number of a specific protein, knowing its FlyBase identifier
+$ grep -B2 "FBpp0100176" example_files/Dmel.mito.genome.gb
+                     /product="cytochrome c oxidase subunit I"
+                     /protein_id="YP_009047267.1"
+                     /db_xref="FLYBASE:FBpp0100176"
+```
+
+
+[↑ Table of contents ↑](#Table-of-contents)
+
