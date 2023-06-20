@@ -26,27 +26,32 @@ This repository is meant to introduce trainee students of the EVO•COM group of
 ## Command cheat sheet
 | Command | Meaning | Description |
 | --- | --- | --- |
-| <code>man</code> | | |
-| <code>pwd</code> | | |
-| <code>cd</code> | | |
-| <code>mkdir</code> | | |
-| <code>cat</code> | | |
-| <code>less</code> | | |
-| <code>head</code> | | |
-| <code>tail</code> | | |
-| <code>cp</code> | | |
-| <code>mv</code> | | |
-| <code>gzip</code> | | |
-| <code>gunzip</code> | | |
-| <code>zip</code> | | |
-| <code>unzip</code> | | |
-| <code>tar</code> | | |
+| [<code>man</code>](#tar-to-compress-directories-and-man-to-inspect-the-manual-of-a-command) | *manual* | Print the manual of a UNIX command|
+| [<code>ssh</code>](#login-to-a-remote-machine-or-server) | *secure shell* | Log-in to remote machines |
+| [<code>pwd</code>](#pwd-cd-and-mkdir-to-manage-directories) | *print working directory* | Print the full path of the directory you are in |
+| [<code>cd</code>](#pwd-cd-and-mkdir-to-manage-directories) | *change directory* | Change your working directory |
+| [<code>mkdir</code>](#pwd-cd-and-mkdir-to-manage-directories) | *make directory* | Create a new directory|
+| [<code>cat</code>](#cat-less-head-and-tail-to-read-file-content) | *concatenate* | Print the content of your file(s) to the stdout |
+| [<code>less</code>](#cat-less-head-and-tail-to-read-file-content) | - | Print the content of your file a screen at a time|
+| [<code>head</code>](#cat-less-head-and-tail-to-read-file-content) | - | Print the first N lines of a file to the stdout |
+| [<code>tail</code>](#cat-less-head-and-tail-to-read-file-content) | - | Print the last N lines of a file to the stdout |
+| [<code>cp</code>](#cp-and-mv-to-copypaste-and-cutpaste-files) | *copy* | Create a copy of a file |
+| [<code>mv</code>](#cp-and-mv-to-copypaste-and-cutpaste-files) | *move* | Move a file to a new location or rename it|
+| [<code>gzip</code>](#gzipgunzip-and-zipunzip-to-work-with-compressed-files) | *GNU zip* | Compress a file |
+| [<code>gunzip</code>](#gzipgunzip-and-zipunzip-to-work-with-compressed-files) | *GNU unzip* | Uncompress a gzip file |
+| [<code>zip</code>](#gzipgunzip-and-zipunzip-to-work-with-compressed-files) | - | Compress a file |
+| [<code>unzip</code>](#gzipgunzip-and-zipunzip-to-work-with-compressed-files) | - | Uncompress a zip file |
+| [<code>tar</code>](#tar-to-compress-directories-and-man-to-inspect-the-manual-of-a-command) | *tape archive* | Create an archive of a directory (and compress it if desidered) |
+
+[↑ Table of contents ↑](#Table-of-contents)
 
 ## Useful textbooks and resources
   - [*Unix in a nutshell*](https://www.oreilly.com/library/view/unix-in-a/0596100299/) by Arnold Robbins (2005), O'Reilly Media, Inc.
   - [*Bioinformatics data skills*](https://www.oreilly.com/library/view/bioinformatics-data-skills/9781449367480/) by Vince Buffalo (2015), O'Reilly Media, Inc.
   - [*Bash scripting cheatsheet*](https://devhints.io/bash) by Rico Sta. Cruz.
   - Take also a look at [notes by Mariangela Iannello](https://github.com/MariangelaIannello/didattica) (bash basics, scripting and transcriptome assembly/annotation pipelines, gene differential expression) and [notes by Jacopo Martelossi](https://github.com/jacopoM28/CompOmics_Tutorship/tree/main) (bash basics, scripting, genome assembly and annotation, orthology inference)!!
+
+[↑ Table of contents ↑](#Table-of-contents)
 
 ## UNIX, Linux and Bash: let's make things clear
 When first approaching bioinformatics, biologists may tend to confuse and use indiscriminately the words "Unix", "Linux" and "Bash". However, each of them refers to *different concepts*.
@@ -163,7 +168,7 @@ where <code>mkdir</code> stands for *<ins>m</ins>a<ins>k</ins>e <ins>dir</ins>ec
 ### <code>cat</code>, <code>less</code>, <code>head</code> and <code>tail</code> to read file content
 Through the shell you are going to interact mainly with text files, such as fastq, fasta, vcf and gff files, so it's important for you to know how to read (and visualize) what's inside of them. There are many ways to fulfil this purpose and each of them fits with different needs.
 
-One of the most common way to inspect a file is by using <code>cat</code>, which will **print the content of your file in the stdout** ([here](example_files/Dmel.COI.fasta) is the <code>Dmel.COI.fasta</code> file):
+One of the most common way to inspect a file is by using <code>cat</code>, which will **print the content of your file(s) in the stdout** ([here](example_files/Dmel.COI.fasta) is the <code>Dmel.COI.fasta</code> file):
 ```bash
 #inspect the fasta file containing the protein sequence from the COI gene of Drosophila melanogaster 
 $ cat example_files/Dmel.COI.fasta
