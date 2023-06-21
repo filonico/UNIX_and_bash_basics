@@ -11,7 +11,7 @@ This repository is meant to introduce trainee students of the EVO•COM group of
     - [GNU/Linux is a UNIX-like operating system](#gnulinux-is-a-unix-like-operating-system)
     - [The shell is a command-line interpreter](#the-shell-is-a-command-line-interpreter)
     - [Bash is a UNIX shell and a command language](#bash-is-a-unix-shell-and-a-command-language)
-  - **[Login to a remote machine (ssh)](#login-to-a-remote-machine-or-server)**
+  - **[<code>ssh</code> to login to a remote machine](#login-to-a-remote-machine-or-server)**
   - **[Basic commands to manage directories and files](#basic-commands-to-manage-directories-and-files)**
     - [<code>pwd</code>, <code>cd</code> and <code>mkdir</code> to manage directories](#pwd-cd-and-mkdir-to-manage-directories)
     - [<code>cat</code>, <code>less</code>, <code>head</code> and <code>tail</code> to read file content](#cat-less-head-and-tail-to-read-file-content)
