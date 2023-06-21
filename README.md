@@ -5,6 +5,7 @@ This repository is meant to introduce trainee students of the EVO•COM group of
 
 ## Table of contents
   - **[Command cheat sheet](#command-cheat-sheet)**
+  - **[Useful textbooks and resources](#useful-textbooks-and-resources)**
   - **[UNIX, Linux and Bash: let's make things clear](#unix-linux-and-bash-lets-make-things-clear)**
     - [UNIX is a family of operating systems](#unix-is-a-family-of-operating-systems)
     - [GNU/Linux is a UNIX-like operating system](#gnulinux-is-a-unix-like-operating-system)
