@@ -43,6 +43,7 @@ This repository is meant to introduce trainee students of the EVO•COM group of
 | [<code>zip</code>](#gzipgunzip-and-zipunzip-to-work-with-compressed-files) | - | Compress a file |
 | [<code>unzip</code>](#gzipgunzip-and-zipunzip-to-work-with-compressed-files) | - | Uncompress a zip file |
 | [<code>tar</code>](#tar-to-compress-directories-and-man-to-inspect-the-manual-of-a-command) | *tape archive* | Create an archive of a directory (and compress it if desidered) |
+| [<code>grep</code>](#grep-to-find-patterns-in-files) | *globally searches for regular expression and prints out*| Search for a pattern in files |
 
 [↑ Table of contents ↑](#Table-of-contents)
 
@@ -413,6 +414,7 @@ $ grep -B2 "FBpp0100176" example_files/Dmel.mito.genome.gb
                      /db_xref="FLYBASE:FBpp0100176"
 ```
 
+> Use <code>grep</code> to find a pattern in files and print the matching line.
 
 [↑ Table of contents ↑](#Table-of-contents)
 
