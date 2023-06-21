@@ -415,7 +415,15 @@ $ grep -B2 "FBpp0100176" example_files/Dmel.mito.genome.gb
                      /db_xref="FLYBASE:FBpp0100176"
 ```
 
-> Use <code>grep</code> to find a pattern in files and print the matching line.
+> Use <code>grep</code> to find a pattern in files and print the matching lines.
+>
+> Use <code>grep -c</code> to find a pattern in files and print the number of matching lines.
+>
+> Use <code>grep -v</code> to find a pattern in files and print the non-matching lines.
+>
+> Use <code>grep -AN</code> to find a pattern in files and print the matching lines plus the following N lines.
+>
+> Use <code>grep -BN</code> to find a pattern in files and print the matching lines plus the previous N lines.
 
 [↑ Table of contents ↑](#Table-of-contents)
 
