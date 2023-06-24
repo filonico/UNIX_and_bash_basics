@@ -30,7 +30,7 @@ This repository is meant to introduce trainee students of the EVO•COM group of
 ## Command cheat sheet
 | Command | Meaning | Description |
 | --- | --- | --- |
-| [<code>man</code>](#tar-to-compress-directories-and-man-to-inspect-the-manual-of-a-command) | *manual* | Print the manual of a UNIX command|
+| [<code>man</code>](#flags-and-man-to-inspect-the-user-manual-of-a-command) | *manual* | Print the manual of a UNIX command|
 | [<code>ssh</code>](#login-to-a-remote-machine-or-server) | *secure shell* | Log-in to remote machines |
 | [<code>pwd</code>](#pwd-cd-and-mkdir-to-manage-directories) | *print working directory* | Print the full path of the directory you are in |
 | [<code>cd</code>](#pwd-cd-and-mkdir-to-manage-directories) | *change directory* | Change your working directory |
@@ -46,7 +46,7 @@ This repository is meant to introduce trainee students of the EVO•COM group of
 | [<code>gunzip</code>](#gzipgunzip-and-zipunzip-to-work-with-compressed-files) | *GNU unzip* | Uncompress a gzip file |
 | [<code>zip</code>](#gzipgunzip-and-zipunzip-to-work-with-compressed-files) | - | Compress a file |
 | [<code>unzip</code>](#gzipgunzip-and-zipunzip-to-work-with-compressed-files) | - | Uncompress a zip file |
-| [<code>tar</code>](#tar-to-compress-directories-and-man-to-inspect-the-manual-of-a-command) | *tape archive* | Create an archive of a directory (and compress it if desidered) |
+| [<code>tar</code>](#tar-to-compress-directories) | *tape archive* | Create an archive of a directory (and compress it if desidered) |
 | [<code>grep</code>](#grep-to-find-patterns-in-files) | *globally searches for regular expression and prints out*| Search for a pattern in files |
 
 [↑ Table of contents ↑](#Table-of-contents)
@@ -206,6 +206,10 @@ drwxrwxrwx 1 filonico filonico      512 Jun 20 20:09 ./
 -rwxrwxrwx 1 filonico filonico      626 Jun 17 18:53 Dmel.COI.fasta*
 -rwxrwxrwx 1 filonico filonico    73564 Jun 17 18:53 Dmel.mito.genome.gb*
 ```
+
+> Use <code>ls</code> to list the content of a directory
+>
+> Use <code>ll</code> as a shortcut to <code>ls -l</code> to list the content of a directory using a long listing format
 
 [↑ Table of contents ↑](#Table-of-contents)
 
