@@ -15,10 +15,11 @@ This repository is meant to introduce trainee students of the EVO•COM group of
   - **[Basic commands to manage directories and files](#basic-commands-to-manage-directories-and-files)**
     - [<code>pwd</code>, <code>cd</code> and <code>mkdir</code> to manage directories](#pwd-cd-and-mkdir-to-manage-directories)
     - [<code>ls</code> to see the content of a directory](#ls-to-see-the-content-of-a-directory)
+    - [Flags and <code>man</code> to inspect the user manual of a command](#flags-and-man-to-inspect-the-user-manual-of-a-command)
     - [<code>cat</code>, <code>less</code>, <code>head</code> and <code>tail</code> to read file content](#cat-less-head-and-tail-to-read-file-content)
     - [<code>cp</code> and <code>mv</code> to copy/paste and cut/paste files](#cp-and-mv-to-copypaste-and-cutpaste-files)
     - [<code>gzip</code>/<code>gunzip</code> and <code>zip</code>/<code>unzip</code> to work with compressed files](#gzipgunzip-and-zipunzip-to-work-with-compressed-files)
-    - [ <code>tar</code> to compress directories and <code>man</code> to inspect the manual of a command](#tar-to-compress-directories-and-man-to-inspect-the-manual-of-a-command)
+    - [ <code>tar</code> to compress directories](#tar-to-compress-directories)
   - **[Bash scripting](#bash-scripting)**
   - **[Find patterns in files, replace them and work with tables](#find-patterns-in-files-replace-them-and-work-with-tables)**
     - [<code>grep</code> to find patterns in files](#grep-to-find-patterns-in-files)
@@ -182,7 +183,8 @@ Dmag.HPHG.location.gff  Dmel.mito.proteins.faa
 Dmel.COI.fasta          Dmel_GCF.000001215.4_genomic.fna.gz
 Dmel.mito.genome.gb
 
-#list all the files in a directory with a Long listing format; note that ls -s can be abbreviated with ll
+#list all the files in a directory with a Long listing format
+#note that ls -s can be abbreviated with ll
 $ ls -l example_files/
 total 43325
 drwxrwxrwx 1 filonico filonico      512 Jun 20 20:09 ./
@@ -204,6 +206,18 @@ drwxrwxrwx 1 filonico filonico      512 Jun 20 20:09 ./
 -rwxrwxrwx 1 filonico filonico      626 Jun 17 18:53 Dmel.COI.fasta*
 -rwxrwxrwx 1 filonico filonico    73564 Jun 17 18:53 Dmel.mito.genome.gb*
 ```
+
+[↑ Table of contents ↑](#Table-of-contents)
+
+### Flags and <code>man</code> to inspect the user manual of a command
+Here you have just been introduced to **flags** (<code>-l</code> and <code>-t</code> are all flags of <code>ls</code>, but there are many others), i.e., options that can be passed to the main program to modify its behaviour. Just by changing the various accepted flags, <code>ls</code> (or any other command with implemented flags) can accomplish different tasks.
+
+To know all the flags available for a certain UNIX tool, you can rely on the <code>man</code> command, which will print to the stdout the *<ins>MAN</ins>ual* of your interest:
+```bash
+#print the manual of ls
+$ man ls
+```
+
 
 [↑ Table of contents ↑](#Table-of-contents)
 
@@ -361,7 +375,7 @@ $ zless example_files/Dmel_GCF.000001215.4_genomic.fna.gz
 
 [↑ Table of contents ↑](#Table-of-contents)
 
-## <code>tar</code> to compress directories and <code>man</code> to inspect the manual of a command
+## <code>tar</code> to compress directories
 We have just seen how we can save space up by compressing single files. But what about compressing an entire directory? What if you want to archive your recent research (now published on *Nature*) on the gene-family dynamics in hematophagous dipterans? Unfortunately, <code>gzip</code> and <code>zip</code> can basically manage only single files, so you have to rely on other utilities.
 
 <code>tar</code> is a command that allows you to **organize a whole directory** into a single *<ins>T</ins>ape <ins>AR</ins>chive*, which can be subsequently compressed. <code>tar</code> can archive and compress a whole directory all in the same command line and you just need to specify the name of the output compressed archive and the input directory:
@@ -374,7 +388,7 @@ $ tar -cvzf example_files.tar.gz example_file/
 ```
 where <code>-c</code> instructs the command to *<ins>C</ins>reate* a new archive, <code>-v</code> instructs to be *<ins>V</ins>erbose* on the stdout, <code>-z</code> instructs to *g<ins>Z</ins>ip* the archive, and <code>-f</code> specifies the output *<ins>F</ins>ile* name.
 
-Here you have just been introduced to **flags** (<code>-c</code>, <code>-v</code>, <code>-f</code>, etc., are all flags of <code>tar</code>), i.e., options that can be passed to the main program to modify its behaviour. Just by changing the various accepted flags, <code>tar</code> can accomplish different tasks. For example, you can use <code>tar</code> also to **un-compress and un-archive** a directory:
+You can use <code>tar</code> also to **un-compress and un-archive** a directory:
 ```bash
 #archive and compress our example_files/ directory
 $ tar -v -x -f example_files.tar.gz
@@ -383,11 +397,6 @@ $ tar -v -x -f example_files.tar.gz
 $ tar -vxf example_files.tar.gz
 ```
 where <code>-x</code> instructs the command to *e<ins>X</ins>tract* (uncompress) the gzip archive.
-To know all the flags available for a certain UNIX tool, you can rely on the <code>man</code> command, which will print to the stdout the *<ins>MAN</ins>ual* of your interest:
-```bash
-#print the manual of tar
-$ man tar
-```
 
 >Use <code>tar -cvzf</code> to compress a whole directory
 >
