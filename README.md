@@ -14,6 +14,7 @@ This repository is meant to introduce trainee students of the EVO•COM group of
   - **[<code>ssh</code> to login to a remote machine](#login-to-a-remote-machine-or-server)**
   - **[Basic commands to manage directories and files](#basic-commands-to-manage-directories-and-files)**
     - [<code>pwd</code>, <code>cd</code> and <code>mkdir</code> to manage directories](#pwd-cd-and-mkdir-to-manage-directories)
+    - [<code>ls</code> to see the content of a directory](#ls-to-see-the-content-of-a-directory)
     - [<code>cat</code>, <code>less</code>, <code>head</code> and <code>tail</code> to read file content](#cat-less-head-and-tail-to-read-file-content)
     - [<code>cp</code> and <code>mv</code> to copy/paste and cut/paste files](#cp-and-mv-to-copypaste-and-cutpaste-files)
     - [<code>gzip</code>/<code>gunzip</code> and <code>zip</code>/<code>unzip</code> to work with compressed files](#gzipgunzip-and-zipunzip-to-work-with-compressed-files)
@@ -33,6 +34,7 @@ This repository is meant to introduce trainee students of the EVO•COM group of
 | [<code>pwd</code>](#pwd-cd-and-mkdir-to-manage-directories) | *print working directory* | Print the full path of the directory you are in |
 | [<code>cd</code>](#pwd-cd-and-mkdir-to-manage-directories) | *change directory* | Change your working directory |
 | [<code>mkdir</code>](#pwd-cd-and-mkdir-to-manage-directories) | *make directory* | Create a new directory|
+| [<code>ls</code>](#ls-to-see-the-content-of-a-directory) | *list* | Print the content of a directory |
 | [<code>cat</code>](#cat-less-head-and-tail-to-read-file-content) | *concatenate* | Print the content of your file(s) to the stdout |
 | [<code>less</code>](#cat-less-head-and-tail-to-read-file-content) | - | Print the content of your file a screen at a time|
 | [<code>head</code>](#cat-less-head-and-tail-to-read-file-content) | - | Print the first N lines of a file to the stdout |
@@ -168,6 +170,40 @@ where <code>mkdir</code> stands for *<ins>M</ins>a<ins>K</ins>e <ins>DIR</ins>ec
 > Use <code>cd</code> to move to a different directory.
 > 
 > Use <code>mkdir</code> to create a new directory.
+
+[↑ Table of contents ↑](#Table-of-contents)
+
+### <code>ls</code> to see the content of a directory
+Now that we have understood in which directory we are located and how to change your location, it is useful to know how to **visualize the content of the directory** itself. For this purpose, we can use <code>ls</code> to *<ins>L</ins>i<ins>S</ins>t* all the files present in a directory (by default, the working directory):
+```bash
+#list all the files in a directory
+$ ls example_files/
+Dmag.HPHG.location.gff  Dmel.mito.proteins.faa
+Dmel.COI.fasta          Dmel_GCF.000001215.4_genomic.fna.gz
+Dmel.mito.genome.gb
+
+#list all the files in a directory with a Long listing format; note that ls -s can be abbreviated with ll
+$ ls -l example_files/
+total 43325
+drwxrwxrwx 1 filonico filonico      512 Jun 20 20:09 ./
+drwxrwxrwx 1 filonico filonico      512 Jun 23 13:10 ../
+-rwxrwxrwx 1 filonico filonico    44664 Jun 20 20:09 Dmag.HPHG.location.gff*
+-rwxrwxrwx 1 filonico filonico      626 Jun 17 18:53 Dmel.COI.fasta*
+-rwxrwxrwx 1 filonico filonico    73564 Jun 17 18:53 Dmel.mito.genome.gb*
+-rwxrwxrwx 1 filonico filonico     6658 Jun 20 20:25 Dmel.mito.proteins.faa*
+-rwxrwxrwx 1 filonico filonico 44235956 Jun 17 20:08 Dmel_GCF.000001215.4_genomic.fna.gz*
+
+#list all the files in a directory with a long listing format, and sort for modification time
+$ ll -t example_files/
+total 43325
+drwxrwxrwx 1 filonico filonico      512 Jun 23 13:10 ../
+-rwxrwxrwx 1 filonico filonico     6658 Jun 20 20:25 Dmel.mito.proteins.faa*
+drwxrwxrwx 1 filonico filonico      512 Jun 20 20:09 ./
+-rwxrwxrwx 1 filonico filonico    44664 Jun 20 20:09 Dmag.HPHG.location.gff*
+-rwxrwxrwx 1 filonico filonico 44235956 Jun 17 20:08 Dmel_GCF.000001215.4_genomic.fna.gz*
+-rwxrwxrwx 1 filonico filonico      626 Jun 17 18:53 Dmel.COI.fasta*
+-rwxrwxrwx 1 filonico filonico    73564 Jun 17 18:53 Dmel.mito.genome.gb*
+```
 
 [↑ Table of contents ↑](#Table-of-contents)
 
