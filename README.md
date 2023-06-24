@@ -207,9 +207,11 @@ drwxrwxrwx 1 filonico filonico      512 Jun 20 20:09 ./
 -rwxrwxrwx 1 filonico filonico    73564 Jun 17 18:53 Dmel.mito.genome.gb*
 ```
 
-> Use <code>ls</code> to list the content of a directory
+Let's have a look at the output of <code>ls -l</code> (or <code>ll</code>): this listing format is quite useful when moving around folders, as it gives you a lot of information on what you are seeing (e.g., the owner of the file, its size [5th column], its time of creation [6th/7th/8th columns], etc.).
+
+> Use <code>ls</code> to list the content of a directory.
 >
-> Use <code>ll</code> as a shortcut to <code>ls -l</code> to list the content of a directory using a long listing format
+> Use <code>ll</code> as a shortcut to <code>ls -l</code> to list the content of a directory using a long listing format.
 
 [↑ Table of contents ↑](#Table-of-contents)
 
