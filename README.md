@@ -407,8 +407,6 @@ where <code>-x</code> instructs the command to *e<ins>X</ins>tract* (uncompress)
 >Use <code>tar -cvzf</code> to compress a whole directory
 >
 >Use <code>tar -xzf</code> to uncompress a gzip directory
->
->Usa <code>man</code> to inspect the manual of a UNIX command
 
 [↑ Table of contents ↑](#Table-of-contents)
 
