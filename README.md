@@ -216,7 +216,7 @@ Let's have a look at the output of <code>ls -l</code> (or <code>ll</code>): this
 [↑ Table of contents ↑](#Table-of-contents)
 
 ### Flags and <code>man</code> to inspect the user manual of a command
-Here you have just been introduced to **flags** (<code>-l</code> and <code>-t</code> are all flags of <code>ls</code>, but there are many others), i.e., options that can be passed to the main program to modify its behaviour. Just by changing the various accepted flags, <code>ls</code> (or any other command with implemented flags) can accomplish different tasks.
+Here you have just been introduced to **flags** (<code>-l</code> and <code>-t</code> are all flags of <code>ls</code>, but there are many others), i.e., options that can be passed to the main program to modify its behaviour. Just by changing the various accepted flags, <code>ls</code> (or any other command with implemented flags) can accomplish different tasks (have also a look at the [<code>tar</code>](#tar-to-compress-directories) or [<code>grep</code>](#grep-to-find-patterns-in-files) commands later on this tutorial to understand the power of flags).
 
 To know all the flags available for a certain UNIX tool, you can rely on the <code>man</code> command, which will print to the stdout the *<ins>MAN</ins>ual* of your interest:
 ```bash
