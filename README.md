@@ -50,7 +50,7 @@ This repository is meant to introduce trainee students of the EVO•COM group of
 | [<code>tar</code>](#tar-to-compress-directories) | *tape archive* | Create an archive of a directory (and compress it if desidered) |
 | [<code>grep</code>](#grep-to-find-patterns-in-files) | *globally searches for regular expression and prints out*| Search for a pattern in files |
 
-[↑ Table of contents ↑](#Table-of-contents)
+[↑ Table of contents ↑](#table-of-contents)
 
 ## Useful textbooks and resources
   - [*Unix in a nutshell*](https://www.oreilly.com/library/view/unix-in-a/0596100299/) by Arnold Robbins (2005), O'Reilly Media, Inc.
@@ -58,7 +58,7 @@ This repository is meant to introduce trainee students of the EVO•COM group of
   - [*Bash scripting cheatsheet*](https://devhints.io/bash) by Rico Sta. Cruz.
   - Take also a look at [notes by Mariangela Iannello](https://github.com/MariangelaIannello/didattica) (bash basics, scripting and transcriptome assembly/annotation pipelines, gene differential expression) and [notes by Jacopo Martelossi](https://github.com/jacopoM28/CompOmics_Tutorship/tree/main) (bash basics, scripting, genome assembly and annotation, orthology inference)!!
 
-[↑ Table of contents ↑](#Table-of-contents)
+[↑ Table of contents ↑](#table-of-contents)
 
 ## UNIX, Linux and Bash: let's make things clear
 When first approaching bioinformatics, biologists may tend to confuse and use indiscriminately the words "Unix", "Linux" and "Bash". However, each of them refers to *different concepts*.
@@ -79,7 +79,7 @@ So now you should have also understood what is Linux (or better, GNU/Linux). **G
 <img src="https://user-images.githubusercontent.com/72141380/196498196-681b548d-aa3a-43fe-9b0c-64b0abbe5be0.png" height="100"><img src="https://user-images.githubusercontent.com/72141380/196494926-2ad5897b-7b55-4ee4-bbca-3af8a9be4f83.png" height="100">
 </p>
 
-[↑ Table of contents ↑](#Table-of-contents)
+[↑ Table of contents ↑](#table-of-contents)
 
 ### The shell is a command-line interpreter
 The UNIX system was originally created without any graphical interface because of technological limitations and users used to interact with their computers just by typing commands on the shell, on what is called a **command-line interpreter** (CLI; or command-line user interface). Nowadays, we don't usually use the shell to interact with our computers, as we now rely on **graphical user interfaces** (GUIs), which are simple to use and very intuitive and allow users to interact with files and directories in a multimedia environment.
@@ -98,7 +98,7 @@ Overall, the shell (or terminal, or command-line) can just be considered as a wa
 
 Every text command you type in the shell is called the **standard input** (stdin). Every text output you are given by a command is called the **standard output** (stdout). Every error message you are given by a command is called the **standard error** (stderr). This classification will be useful when we will start to use scripts and redirection.
 
-[↑ Table of contents ↑](#Table-of-contents)
+[↑ Table of contents ↑](#table-of-contents)
 
 ### Bash is a UNIX shell and a command language
 Many UNIX shells exhist nowadays, but the most popular is the <ins>B</ins>ourne-<ins>A</ins>gain <ins>SH</ins>ell (**Bash**), a replacement of the original Bourne shell (sh). Bash is essentially a command and programming language and, as such, it uses its own syntax and grammar. So, be aware that the same command may not work in the same way between different shells (even between UNIX shells). Bash, for example, uses a dollar symbol (**<code>\$</code>**) as its own prompt, that is, when the shell is ready to receive a command it will display a <code>\$</code> (not by chance, the <code>$</code> is also present in the bash logo) . On the contrary, a C shell will display a <code>%</code> as a prompt.
@@ -107,7 +107,7 @@ Many UNIX shells exhist nowadays, but the most popular is the <ins>B</ins>ourne-
 <img src="https://user-images.githubusercontent.com/72141380/199702109-62ad5c3f-72a1-438d-9752-c0dc32bd4750.png", height=100>
   </p>
   
-[↑ Table of contents ↑](#Table-of-contents)
+[↑ Table of contents ↑](#table-of-contents)
 
 ## <code>ssh</code> to login to a remote machine or server
 When dealing with bioinformatic data, it may be very unpleasant to work in local computers (or work stations), mostly because of the great amount of computing power that is required to run several processes. This means that most of the time bioinformaticians use to work on remote machine (being them other work stations, servers or clusters), which provide large computing resources and allow to run memory-demanding tasks.
@@ -126,7 +126,7 @@ $ exit
 ```
 > Use <code>ssh</code> to login to remote machines
 
-[↑ Table of contents ↑](#Table-of-contents)
+[↑ Table of contents ↑](#table-of-contents)
 
 ## Basic commands to manage directories and files
 ### <code>pwd</code>, <code>cd</code> and <code>mkdir</code> to manage directories
@@ -173,7 +173,7 @@ where <code>mkdir</code> stands for *<ins>M</ins>a<ins>K</ins>e <ins>DIR</ins>ec
 > 
 > Use <code>mkdir</code> to create a new directory.
 
-[↑ Table of contents ↑](#Table-of-contents)
+[↑ Table of contents ↑](#table-of-contents)
 
 ### <code>ls</code> to see the content of a directory
 Now that we have understood in which directory we are located and how to change your location, it is useful to know how to **visualize the content of the directory** itself. For this purpose, we can use <code>ls</code> to *<ins>L</ins>i<ins>S</ins>t* all the files present in a directory (by default, the working directory):
@@ -214,7 +214,7 @@ Let's have a look at the output of <code>ls -l</code> (or <code>ll</code>): this
 >
 > Use <code>ll</code> as a shortcut to <code>ls -l</code> to list the content of a directory using a long listing format.
 
-[↑ Table of contents ↑](#Table-of-contents)
+[↑ Table of contents ↑](#table-of-contents)
 
 ### Flags and <code>man</code> to inspect the user manual of a command
 Here you have just been introduced to **flags** (<code>-l</code> and <code>-t</code> are all flags of <code>ls</code>, but there are many others), i.e., options that can be passed to the main program to modify its behaviour. Just by changing the various accepted flags, <code>ls</code> (or any other command with implemented flags) can accomplish different tasks. For example, have also a look at the [<code>tar</code>](#tar-to-compress-directories) or [<code>grep</code>](#grep-to-find-patterns-in-files) commands later on this tutorial to understand the power of flags.
@@ -226,7 +226,7 @@ $ man ls
 ```
 
 
-[↑ Table of contents ↑](#Table-of-contents)
+[↑ Table of contents ↑](#table-of-contents)
 
 ### <code>cat</code>, <code>less</code>, <code>head</code> and <code>tail</code> to read file content
 Through the shell you are going to interact mainly with text files, such as fastq, fasta, vcf and gff files, so it's important for you to know how to read (and visualize) what's inside of them. There are many ways to fulfil this purpose and each of them fits with different needs.
@@ -280,7 +280,7 @@ $ tail -n +2 example_files/Dmel.mito.genome.gb #remove the first comment line fr
 > 
 > Use <code>tail</code> to print the last N lines of a file to the stdout.
 
-[↑ Table of contents ↑](#Table-of-contents)
+[↑ Table of contents ↑](#table-of-contents)
 
 ### <code>cp</code> and <code>mv</code> to copy/paste and cut/paste files
 In bioinformatics it is usually very important to maintain one (or even more) backup copy(ies) of the files you are working with, in order to not risk to lose your work. Thus, it is advisable to **copy** the original files and **paste** them in a different location on your storage, by using:
@@ -310,7 +310,7 @@ where <code>mv</code> stands for *<ins>M</ins>o<ins>V</ins>e*.
 > 
 > Use <code>mv</code> to cut and paste files or to rename them in their current directory.
 
-[↑ Table of contents ↑](#Table-of-contents)
+[↑ Table of contents ↑](#table-of-contents)
 
 ## <code>gzip</code>/<code>gunzip</code> and <code>zip</code>/<code>unzip</code> to work with compressed files
 
@@ -380,7 +380,7 @@ $ zless example_files/Dmel_GCF.000001215.4_genomic.fna.gz
 >
 >Use <code>zcat</code>, <code>zles</code> and <code>zgrep</code> to work directly with compressed files.
 
-[↑ Table of contents ↑](#Table-of-contents)
+[↑ Table of contents ↑](#table-of-contents)
 
 ## <code>tar</code> to compress directories
 We have just seen how we can save space up by compressing single files. But what about compressing an entire directory? What if you want to archive your recent research (now published on *Nature*) on the gene-family dynamics in hematophagous dipterans? Unfortunately, <code>gzip</code> and <code>zip</code> can basically manage only single files, so you have to rely on other utilities.
@@ -409,13 +409,13 @@ where <code>-x</code> instructs the command to *e<ins>X</ins>tract* (uncompress)
 >
 >Use <code>tar -xzf</code> to uncompress a gzip directory
 
-[↑ Table of contents ↑](#Table-of-contents)
+[↑ Table of contents ↑](#table-of-contents)
 
 # Bash scripting
 
 |, >, &&, ||, variables, for cycle, if statements, while cycle,...
 
-[↑ Table of contents ↑](#Table-of-contents)
+[↑ Table of contents ↑](#table-of-contents)
 
 # Find patterns in files, replace them and work with tables 
 
@@ -475,7 +475,7 @@ $ grep -B2 "FBpp0100176" example_files/Dmel.mito.genome.gb
 >
 > Use <code>grep -BN</code> to find a pattern in files and print the matching lines plus the previous N lines.
 
-[↑ Table of contents ↑](#Table-of-contents)
+[↑ Table of contents ↑](#table-of-contents)
 
 ## <code>sed</code> to replace patterns in files
 
@@ -498,4 +498,4 @@ This structure is the same for every <code>sed</code> functionality and thus, on
 
 For example, to instruct <code>sed</code> to replace a pattern with something else, we use the syntax <code>s/pattern/replacement/</code>, where the <code>s</code> stands for ***<ins>S</ins>ubstitute*** and the <code>pattern</code> and <code>replacement</code> are delimited by slashes.
 
-[↑ Table of contents ↑](#Table-of-contents)
+[↑ Table of contents ↑](#table-of-contents)
