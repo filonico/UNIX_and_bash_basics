@@ -23,6 +23,7 @@ This repository is meant to introduce trainee students of the EVO•COM group of
   - **[Bash scripting](#bash-scripting)**
   - **[Find patterns in files, replace them and work with tables](#find-patterns-in-files-replace-them-and-work-with-tables)**
     - [<code>grep</code> to find patterns in files](#grep-to-find-patterns-in-files)
+    - [<code>sed</code> to replace patterns in files](#sed-to-replace-patterns-in-files)
   - **Working with conda environments**
   - **Working in screen sessions**
   - **Working with git (git clone, git push, git pull, git add,...)**
@@ -476,3 +477,8 @@ $ grep -B2 "FBpp0100176" example_files/Dmel.mito.genome.gb
 
 [↑ Table of contents ↑](#Table-of-contents)
 
+## <code>sed</code> to replace patterns in files
+
+Every find command has its own replace companion. And so does bash. 
+
+[↑ Table of contents ↑](#Table-of-contents)
