@@ -146,16 +146,16 @@ $ cd /path/to/your/Desktop/
 where <code>cd</code> stands for *<ins>C</ins>hange <ins>D</ins>irectory*. Some other useful <code>cd</code> commands are:
 
 ```bash
-#go to the parent directory
+# go to the parent directory
 $ cd ..
 
-#go to the previous directory
+# go to the previous directory
 $ cd -
 
-#go to the root directory
+# go to the root directory
 $ cd /
 
-#go to the home directory
+# go to the home directory
 $ cd
 ```
 You can now understand the difference between an **absolute path** and a **relative path**. The absolute path unambiguously defines a file or a directory. The relative path, instead, defines the path to a file or a directory *relatively to the working directory*.
@@ -178,14 +178,14 @@ where <code>mkdir</code> stands for *<ins>M</ins>a<ins>K</ins>e <ins>DIR</ins>ec
 ### <code>ls</code> to see the content of a directory
 Now that we have understood in which directory we are located and how to change your location, it is useful to know how to **visualize the content of the directory** itself. For this purpose, we can use <code>ls</code> to *<ins>L</ins>i<ins>S</ins>t* all the files present in a directory (by default, the working directory):
 ```bash
-#list all the files in a directory
+# list all the files in a directory
 $ ls example_files/
 Dmag.HPHG.location.gff  Dmel.mito.proteins.faa
 Dmel.COI.fasta          Dmel_GCF.000001215.4_genomic.fna.gz
 Dmel.mito.genome.gb
 
-#list all the files in a directory with a Long listing format
-#note that ls -s can be abbreviated with ll
+# list all the files in a directory with a Long listing format
+# note that ls -s can be abbreviated with ll
 $ ls -l example_files/
 total 43325
 drwxrwxrwx 1 filonico filonico      512 Jun 20 20:09 ./
@@ -196,7 +196,7 @@ drwxrwxrwx 1 filonico filonico      512 Jun 23 13:10 ../
 -rwxrwxrwx 1 filonico filonico     6658 Jun 20 20:25 Dmel.mito.proteins.faa*
 -rwxrwxrwx 1 filonico filonico 44235956 Jun 17 20:08 Dmel_GCF.000001215.4_genomic.fna.gz*
 
-#list all the files in a directory with a long listing format, and sort for modification time
+# list all the files in a directory with a long listing format, and sort for modification time
 $ ll -t example_files/
 total 43325
 drwxrwxrwx 1 filonico filonico      512 Jun 23 13:10 ../
@@ -221,7 +221,7 @@ Here you have just been introduced to **flags** (<code>-l</code> and <code>-t</c
 
 To know all the flags available for a certain UNIX tool, you can rely on the <code>man</code> command, which will print to the stdout the *<ins>MAN</ins>ual* of your interest:
 ```bash
-#print the manual of ls
+# print the manual of ls
 $ man ls
 ```
 
@@ -233,7 +233,7 @@ Through the shell you are going to interact mainly with text files, such as fast
 
 One of the most common way to inspect a file is by using <code>cat</code>, which will **print the content of your file(s) in the stdout** ([here](example_files/Dmel.COI.fasta) is the <code>Dmel.COI.fasta</code> file):
 ```bash
-#inspect the fasta file containing the protein sequence from the COI gene of Drosophila melanogaster 
+# inspect the fasta file containing the protein sequence from the COI gene of Drosophila melanogaster 
 $ cat example_files/Dmel.COI.fasta
 >YP_009047267.1 cytochrome c oxidase subunit I, partial (mitochondrion) [Drosophila melanogaster]
 SRQWLFSTNHKDIGTLYFIFGAWAGMVGTSLSILIRAELGHPGALIGDDQIYNVIVTAHAFIMIFFMVMP
@@ -252,8 +252,8 @@ In these cases, you would like to rely on <code>less</code>, which will **print 
 
 <code>less</code> is particularly useful to debugging your command-line pipelines, i.e., it helps you to check step by step if the commands you want to run on your files are working properly.
 ```bash
-#imagine you want to extract all the gene IDs of the Drosophila mitochondrial proteins from the relative fasta file
-#the following command lines are just descriptive of the action we want to take
+# imagine you want to extract all the gene IDs of the Drosophila mitochondrial proteins from the relative fasta file
+# the following command lines are just descriptive of the action we want to take
 $ extract_the_headers example_files/Dmel.mito.proteins.fasta | less
 $ extract_the_headers example_files/Dmel.mito.proteins.fasta | remove_unwanted_information | less
 $ extract_the_headers example_files/Dmel.mito.proteins.fasta | remove_unwanted_information | convert_to_tsv_format | less
@@ -262,11 +262,11 @@ Both <code>cat</code> and <code>less</code> can be used also to **read gzipped f
 
 Sometimes you may need to read just the first or last lines of a file, for example because you just need to know the header of an output or the ending time of a certain analysis. You can then use <code>head</code> and <code>tail</code> to **print to the stdout the first and last 10 lines (default) of a file** respectively ([here](example_files/Dmel.mito.genome.gb) is the <code>Dmel.mito.genome.gb</code> file):
 ```bash
-#you can specify the number of lines to print using the flag -n
+# you can specify the number of lines to print using the flag -n
 $ head -n 32 example_files/Dmel.mito.genome.gb #print the header of the genbank file
 $ tail -n 328 example_files/Dmel.mito.genome.gb #print the sequence of the genbank file
 
-#you can use head/tail to remove the last/first N lines from a file
+# you can use head/tail to remove the last/first N lines from a file
 $ head -n -328 example_files/Dmel.mito.genome.gb #remove the last line from the genbank file
 $ tail -n +2 example_files/Dmel.mito.genome.gb #remove the first comment line from the genbank file
 ```
@@ -285,20 +285,20 @@ $ tail -n +2 example_files/Dmel.mito.genome.gb #remove the first comment line fr
 ### <code>cp</code> and <code>mv</code> to copy/paste and cut/paste files
 In bioinformatics it is usually very important to maintain one (or even more) backup copy(ies) of the files you are working with, in order to not risk to lose your work. Thus, it is advisable to **copy** the original files and **paste** them in a different location on your storage, by using:
 ```bash
-#copy a file to a different location and keep the original name
+# copy a file to a different location and keep the original name
 $ cp your_file.txt /location/of/the/copy/of/your_file.txt
 
-#copy a file to a different location and rename the copy
+# copy a file to a different location and rename the copy
 $ cp your_file.txt /location/of/the/copy/of/your_file_copy.txt
 ```
 where <code>cp</code> stands obviously for *<ins>C</ins>o<ins>P</ins>y*.
   
 However, the storage memory is not limitless, so sometimes it is more convenient to **cut** your files and **paste** them in a different location on your storage, by usig:
 ```bash
-#move a file to a different location and keep the original name
+# move a file to a different location and keep the original name
 $ mv your_file.txt new/location/of/your_file.txt
 
-#move a file to a different location and rename it
+# move a file to a different location and rename it
 $ mv your_file.txt new/location/of/your_file_new.txt
 
 # if you do not specifiy a different directory, the file will be just renamed
@@ -318,36 +318,36 @@ As we have already pointed out, bioinformatic files are often very big in size (
 
 To this purpose, you can easily **compress your files** by using <code>gzip</code>, a <ins>ZIP</ins>ping program which was originally intended for <ins>G</ins>NU users. With <code>gzip</code> you can also choose the compression ratio by specifying a number between <code>1</code> (low compression ratio) and <code>9</code> (high compression ratio; default is <code>6</code>):
 ```bash
-#gzip your very very big file
+# gzip your very very big file
 $ gzip a_very_big_file.txt
 
-#gzip your very very big file with a low compression ratio (and a high speed)
+# gzip your very very big file with a low compression ratio (and a high speed)
 $ gzip -1 a_very_big_file.txt
 
-#gzip your very very big file with a high compression ratio (and a low speed)
+# gzip your very very big file with a high compression ratio (and a low speed)
 $ gzip -9 a_very_big_file.txt
 ```
 Note that <code>gzip</code> compresses your file inplace, thus replacing the original uncompressed file (and appending a <code>.gz</code> extension). Can you come up with a solution to this, imaging that you want to create a new file instead of replacing the original?
 
 Another useful command to zip file is (surprisingly) <code>zip</code>, which is meant to create compressed file with a <code>.zip</code> extension (very common in a Windows environment):
 ```bash
-#zip your very very big file
+# zip your very very big file
 $ zip a_zipped_file.zip a_very_big_file.txt
 ```
 However, in this case the <code>zip</code> command will not replace your original file and thus also requires the filename of your compressed file.
 
 Besides compressing, we may clearly also want to **uncompress** some of our files. In this case we can use the <code>gunzip</code> and <code>unzip</code> commands to work with <code>.gz</code> and <code>.zip</code> files, respectively:
 ```bash
-#gunzip a .gz file
+# gunzip a .gz file
 $ gunzip a_gzipped_file.gz
 
-#unzip a .zip file
+# unzip a .zip file
 $ unzip a_zipped_file.zip
 ```
 
 During your analyses, you will run into gzipped files basically every day. Thus, you may wonder how to use such files without uncompressing them, just to avoid typing an additional command line or because you are running out of space. Fortunately, many bash commands come with certain build-in functions to **directly handle gzipped files**, such as <code>zless</code>, <code>zcat</code> (see the [previous section](#cat-less-head-and-tail-to-read-file-content) about them), <code>zgrep</code> (we will see this command in a following section), and <code>zdiff</code> ([here](example_files/Dmel_GCF.000001215.4_genomic.fna.gz) is the <code>Dmel_GCF.000001215.4_genomic.fna.gz file</code>):
 ```bash
-#print the entire content of a gzip file to the stdout
+# print the entire content of a gzip file to the stdout
 $ zcat example_files/Dmel_GCF.000001215.4_genomic.fna.gz
 >NC_004354.4 Drosophila melanogaster chromosome X
 GAATTCGTCAGAAATGAgctaaacaaatttaaatcattaaatgcGAGCGGCGAATCCGGAAACAGCAACTTCAAACCAGT
@@ -370,7 +370,7 @@ AATTCAAACAATGGAAAACAAATACATCAGACGAATCATAAACGCCAGCAGATACACGAGACAAGCAGACATAAGGACAA
 AATATaacattaaatcatttgatGAAATTTTTGACAAAGCAAGCCAACGCTACGCCAACTCCCTCACTGACCATGAAAAC
 CCTTTAATATATGACCTCCTTATCAACGCCTACAAGCCGAACAGACTGGAACTAAGCAAAAACAGATACGTCAAGCaatt
 ...
-#print the content of a gzip file a screen at a time
+# print the content of a gzip file a screen at a time
 $ zless example_files/Dmel_GCF.000001215.4_genomic.fna.gz
 ```
 
@@ -387,20 +387,20 @@ We have just seen how we can save space up by compressing single files. But what
 
 <code>tar</code> is a command that allows you to **organize a whole directory** into a single *<ins>T</ins>ape <ins>AR</ins>chive*, which can be subsequently compressed. <code>tar</code> can archive and compress a whole directory all in the same command line and you just need to specify the name of the output compressed archive and the input directory:
 ```bash
-#archive and compress our example_files/ directory
+# archive and compress our example_files/ directory
 $ tar -c -v -z -f example_files.tar.gz example_file/
 
-#or, in short
+# or, in short
 $ tar -cvzf example_files.tar.gz example_file/
 ```
 where <code>-c</code> instructs the command to *<ins>C</ins>reate* a new archive, <code>-v</code> instructs to be *<ins>V</ins>erbose* on the stdout, <code>-z</code> instructs to *g<ins>Z</ins>ip* the archive, and <code>-f</code> specifies the output *<ins>F</ins>ile* name.
 
 You can use <code>tar</code> also to **un-compress and un-archive** a directory:
 ```bash
-#archive and compress our example_files/ directory
+# archive and compress our example_files/ directory
 $ tar -v -x -f example_files.tar.gz
 
-#or, in short
+# or, in short
 $ tar -vxf example_files.tar.gz
 ```
 where <code>-x</code> instructs the command to *e<ins>X</ins>tract* (uncompress) the gzip archive.
@@ -424,7 +424,7 @@ We have already said multiple times that files containing biological data and an
 
 For example, let's have a look at the file [<code>Dmag.HPHG.location.gff</code>](example_files/Dmag.HPHG.location.gff). This is a so-called gff (*General Feature Format*) file, which stores informations about different genetic sequences in a genome (see [here](https://www.ensembl.org/info/website/upload/gff3.html) to know more about gffs). Imagine that you just want to extract informations about mRNA features from the gff. <code>grep</code> is the master UNIX command that accomplishes such tasks, as it ***<ins>G</ins>lobally searches for <ins>R</ins>egular <ins>E</ins>xpression and <ins>P</ins>rints out*** the results:
 ```bash
-#extract "mRNA" feature from the gff file
+# extract "mRNA" feature from the gff file
 $ grep "mRNA" example_files/Dmag.HPHG.location.gff
 NC_046178.1     Gnomon  mRNA    7392893 7415487 .       +       .       ID=rna-XM_032930663.1;Parent=gene-LOC116924082;Dbxref=GeneID:116924082,Genbank:XM_032930663.1;Name=XM_032930663.1;gene=LOC116924082;model_evidence=Supporting evidence includes similarity to: 9 Proteins%2C and 100%25 coverage of the annotated genomic feature by RNAseq alignments%2C including 31 samples with support for all annotated introns;product=homeotic protein caudal-like%2C transcript variant X1;transcript_id=XM_032930663.1
 NC_046178.1     Gnomon  mRNA    7993982 8009001 .       +       .       ID=rna-XM_032929649.1;Parent=gene-LOC116923174;Dbxref=GeneID:116923174,Genbank:XM_032929649.1;Name=XM_032929649.1;Note=The sequence of the model RefSeq transcript was modified relative to this genomic sequence to represent the inferred CDS: added 86 bases not found in genome assembly;exception=annotated by transcript or proteomic data;gene=LOC116923174;inference=similar to RNA sequence (same species):INSD:GGRO01024192.1;model_evidence=Supporting evidence includes similarity to: 1 2C 8 Proteins%2C and 99%25 coverage of the annotated genomic feature by RNAseq alignments;partial=true;product=homeobox protein abdominal-B-like;transcript_id=XM_032929649.1
@@ -443,22 +443,22 @@ Once you have instructed <code>grep</code> with the pattern to look for, it will
 
 As we have already seen with [<code>tar</code>](#tar-to-compress-directories-and-man-to-inspect-the-manual-of-a-command), you can change the behaviour of <code>grep</code> by appending many different tags to the main command. If you want to read all the flags that are available for <code>grep</code>, you can look for its manual (*do you remember how to evoke the manual of a UNIX command?*). I'll drop hereafter some of the most-common and useful flags of <code>grep</code> for bioinformaticians:
 ```bash
-#grep the pattern and Count the number of matching lines (N.B.: this flag counts the number of matching lines, not of occurrencies)
+# grep the pattern and Count the number of matching lines (N.B.: this flag counts the number of matching lines, not of occurrencies)
 $ grep -c "mRNA" example_files/Dmag.HPHG.location.gff
 12
 
-#grep the pattern and inVert the search results, i.e., print all the lines that do not match the pattern
+# grep the pattern and inVert the search results, i.e., print all the lines that do not match the pattern
 $ grep -v "mRNA" example_files/Dmag.HPHG.location.gff
 ...
 
-#grep the pattern and print also the N lines after each matching, where N is an integer
+# grep the pattern and print also the N lines after each matching, where N is an integer
 #here the example allows you to extract the sequence of the ND5 mitochondrial gene of Drosophila
 $ grep -A1 "ND5" example_files/Dmel.mito.proteins.faa
 >lcl|NC_024511.2_prot_YP_009047273.1_8 [gene=ND5] [locus_tag=Dmel_CG34083] [db_xref=FLYBASE:FBpp0390633] [protein=NADH dehydrogenase subunit 5] [transl_except=(pos:1717..1717,aa:TERM)] [protein_id=YP_009047273.1] [location=complement(6409..8125)] [gbkey=CDS]
 MCSISFVNLISMSLSCFLLSLYFLLNDMIYFIEWELVSLNSMSIVMTFLFDWMSLLFMSFVLMISSLVIFYSKEYMMNDNHINRFIMLVLMFVLSMMLLIISPNLISILLGWDGLGLVSYCLVIYFQNIKSYNAGMLTALSNRIGDVALLLSIAWMLNYGSWNYIFYLEIMQNEFEMLMIGSLVMLAAMTKSAQIPFSSWLPAAMAAPTPVSALVHSSTLVTAGVYLLIRFNIILSTSWLGQLMLLLSGLTMFMAGLGANFEFDLKKIIALSTLSQLGLMMSILSMGFLKLAMFHLLTHALFKALLFMCAGAIIHNMNNSQDIRLMGGLSIHMPLTSACFNVSNLALCGMPFLAGFYSKDMILEIVSISNVNMFSFFLYYFSTGLTVSYSFRLVYYSMTGDLNCGSLNMLNDESWIMLRGMMGLLIMSIIGGSMLNWLIFPFPYMICLPIYMKLLTLFVCIVGGLFGYLISLSNLFFLNKSLFMYNLSTFLGSMWFMPYISTYGMIFYPLNYGQLVVKSFDQGWSEYFGGQHLYQKLSMYSKTLFLMHNNSLKIYLLLFVFWILILLILLFL
 
-#grep the pattern and print also the N lines before each matching, where N is an integer
-#here the example allows you to know the name and NCBI accession number of a specific protein, knowing its FlyBase identifier
+# grep the pattern and print also the N lines before each matching, where N is an integer
+# here the example allows you to know the name and NCBI accession number of a specific protein, knowing its FlyBase identifier
 $ grep -B2 "FBpp0100176" example_files/Dmel.mito.genome.gb
                      /product="cytochrome c oxidase subunit I"
                      /protein_id="YP_009047267.1"
@@ -479,6 +479,23 @@ $ grep -B2 "FBpp0100176" example_files/Dmel.mito.genome.gb
 
 ## <code>sed</code> to replace patterns in files
 
-Every find command has its own replace companion. And so does bash. 
+Bioinformaticians do not usually want to just find patterns in files, but they may also need to replace that pattern with something else. To this purpose, <code>sed</code> comes into help as your best-friend ***<ins>S</ins>tream <ins>ED</ins>itor***.
+
+Together with [<code>grep</code>](#grep-to-find-patterns-in-files) and <code>awk</code>, <code>sed</code> is probably one of the most powerful Unix tools, as it implements many different functions. One of the most widely used is probably the *substitute* function, which allows you to replace a pattern in a file with something else.
+
+Let's go back to the previous example with the [<code>Dmag.HPHG.location.gff</code>](example_files/Dmag.HPHG.location.gff) file and replace the <code>mRNA</code> pattern with <code>transcript</code>:
+```
+# replace "mRNA" with "transcript"
+$ sed 's/mRNA/transcrip/' Dmag.HPHG.location.gff
+```
+
+The <code>sed</code> syntax can be quite confusing at a first glance, especially when compared to other Unix tools. Thus it can be helpful to dissect the command into substrings; generally, <code>sed</code> is followed by:
+  - **flags**, which are absent in the previous example;
+  - the **command** itself in quotes;
+  - the **file** that must be processed.
+
+This structure is the same for every <code>sed</code> functionality and thus, once memorized, can be declined in different fashions. However, each <code>sed</code> function has its own internal syntax.
+
+For example, to instruct <code>sed</code> to replace a pattern with something else, we use the syntax <code>s/pattern/replacement/</code>, where the <code>s</code> stands for ***<ins>S</ins>ubstitute*** and the <code>pattern</code> and <code>replacement</code> are delimited by slashes.
 
 [↑ Table of contents ↑](#Table-of-contents)
