@@ -413,7 +413,9 @@ where <code>-x</code> instructs the command to *e<ins>X</ins>tract* (uncompress)
 
 # Bash scripting
 
-|, >, &&, ||, variables, for cycle, if statements, while cycle,...
+**🚧🚧 WORK IN PROGRESS 🚧🚧**
+
+*|, >, &&, ||, variables, for cycle, if statements, while cycle,...*
 
 [↑ Table of contents ↑](#table-of-contents)
 
