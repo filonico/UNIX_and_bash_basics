@@ -20,11 +20,15 @@ This repository is meant to introduce trainee students of the EVO•COM group of
     - [<code>cp</code> and <code>mv</code> to copy/paste and cut/paste files](#cp-and-mv-to-copypaste-and-cutpaste-files)
     - [<code>gzip</code>/<code>gunzip</code> and <code>zip</code>/<code>unzip</code> to work with compressed files](#gzipgunzip-and-zipunzip-to-work-with-compressed-files)
     - [ <code>tar</code> to compress directories](#tar-to-compress-directories)
-  - **[Bash scripting](#bash-scripting)**
-  - **[Find patterns in files, replace them and work with tables](#find-patterns-in-files-replace-them-and-work-with-tables)**
+  - **[Bash scripting](#bash-scripting)** 🚧
+  - **[Find patterns in files and replace them](#find-patterns-in-files-and-replace-them)**
     - [<code>grep</code> to find patterns in files](#grep-to-find-patterns-in-files)
     - [<code>sed</code> to replace patterns in files](#sed-to-replace-patterns-in-files)
-  - **Working with conda environments**
+  - **[Working with tables](#working-with-tables)** 🚧
+    - [<code>cut</code>](#cut) 🚧
+    - [<code>awk</code>](#awk) 🚧
+    - [<code>join and paste</code>](#join-and-paste) 🚧
+  - **[Working with conda environments](#working-with-conda-environments)**
   - **Working in screen sessions**
   - **Working with git (git clone, git push, git pull, git add,...)**
 
@@ -419,7 +423,7 @@ where <code>-x</code> instructs the command to *e<ins>X</ins>tract* (uncompress)
 
 [↑ Table of contents ↑](#table-of-contents)
 
-# Find patterns in files, replace them and work with tables 
+# Find patterns in files and replace them 
 
 ## <code>grep</code> to find patterns in files
 We have already said multiple times that files containing biological data and analyses can be really really big (I'm probably getting boring with this kind of sentence). And of all the lines and words stored inside a text file, you may just need few of them.
@@ -488,7 +492,7 @@ Bioinformaticians do not usually want to just find patterns in files, but they m
 Together with [<code>grep</code>](#grep-to-find-patterns-in-files) and <code>awk</code>, <code>sed</code> is probably one of the most powerful Unix tools, as it implements many different functions. One of the most widely used is probably the *substitute* function, which allows you to replace a pattern in a file with something else.
 
 Let's go back to the previous example with the [<code>Dmag.HPHG.location.gff</code>](example_files/Dmag.HPHG.location.gff) file and replace the <code>mRNA</code> pattern with <code>transcript</code>:
-```
+```bash
 # replace "mRNA" with "transcript"
 $ sed 's/mRNA/transcrip/' Dmag.HPHG.location.gff
 ...
@@ -505,19 +509,19 @@ As already seen, to instruct <code>sed</code> to replace a pattern with somethin
 
 Let's now see another example of the *substitute* function of <code>sed</code>. As you will experience, many bioinformatic programs hardly bear space characters ('<code> </code>'). So let's substitute *all the* spaces with underscores ('<code>_</code>') in the <code>example_files/Dmel.mito.proteins.faa</code> fasta file:
 
-```
+```bash
 # substitute spaces with underscores
 $ sed 's/ /_/' example_files/Dmel.mito.proteins.faa
 ...
 ```
 Take a look a the stdout: did you obtained what you were asking for? No, you didn't! That's because <code>sed</code> subtitute *only* the first occurrence of your pattern in each line. Thus, if you want <code>sed</code> to substitute you pattern *<ins>G</ins>lobally*, you need to add the <code>g</code> option to your command:
-```
+```bash
 # substitute spaces with underscores globally
 $ sed 's/ /_/g' example_files/Dmel.mito.proteins.faa
 ...
 ```
 But now there's another problem. If you open the file <code>example_files/Dmel.mito.proteins.faa</code> you'll see that no substitution has been made. That's because <code>sed</code> does not write directly in the file but jsut print the results to the stdout. If you wish to modify your file directly *<ins>I</ins>nplace* (strongly discouraged, if you make a mistake there's no way back) you need the <code>-i</code> flag:
-```
+```bash
 # substitute spaces with underscores globally
 $ sed -i 's/ /_/g' example_files/Dmel.mito.proteins.faa
 ```
@@ -530,5 +534,36 @@ Note that, apart from substitute, <code>sed</code> has many other commands, for 
 > Use <code>sed 's/pattern/replacement/g'</code> to substitute all the occurrences (i.e., globally) of a pattern in a file.
 >
 > Use <code>sed -i</code> to write the results directly in the input file (i.e., in-place).
+
+[↑ Table of contents ↑](#table-of-contents)
+
+# Working with tables
+
+## <code>cut</code>
+
+**🚧🚧 WORK IN PROGRESS 🚧🚧**
+
+[↑ Table of contents ↑](#table-of-contents)
+
+## <code>awk</code>
+
+**🚧🚧 WORK IN PROGRESS 🚧🚧**
+
+[↑ Table of contents ↑](#table-of-contents)
+
+## <code>join</code> and <code>paste</code>
+
+**🚧🚧 WORK IN PROGRESS 🚧🚧**
+
+[↑ Table of contents ↑](#table-of-contents)
+
+# Working with Conda environments
+
+Most of the times, when working on shared workstations or servers, you are not given administrative permissions. That is, you are not allowed to freely roam around and manage directories or install softwares. This is basically for your (and everyone's) safety, so that for example important files are not damaged by mistake. Though, you will need for sure to install new softwares for your analyses. So how can you be able to get programmes without asking every time your administrator? Conda comes into help!!
+
+## Conda is a package and environment management system
+[Conda](https://docs.conda.io/en/latest/) is a software that helps you install other softwares by also taking care of managing all the requeried dependencies.
+
+Besides helping in installing without administrative privileges, Conda is also really useful to solve conflicts between programming language and package versions. So, for example, if you need two softwares, one requiring python v2.7 and one requiring python v3.1, with Conda you can install both of them with litte or no effort.
 
 [↑ Table of contents ↑](#table-of-contents)
