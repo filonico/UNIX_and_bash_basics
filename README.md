@@ -31,7 +31,7 @@ This repository is meant to introduce trainee students of the EVO•COM group of
   - **[Working with Conda environments](#working-with-conda-environments)**
     - [Conda is a package and environment management system](#conda-is-a-package-and-environment-management-system)
     - [Create a new Conda environment](#create-a-new-conda-environment)
-    - [Install a software with Conda](#install-a-software-with-conda) 🚧
+    - [Install a software with Conda](#install-a-software-with-conda)
     - [List all Conda environments](#list-all-conda-environments) 🚧
     - [Export a Conda environment to a YAML file](#export-a-conda-environment-to-a-yaml-file) 🚧
     - [Remove a Conda environment](#remove-a-conda-environment) 🚧
@@ -622,7 +622,7 @@ $ conda create -n iqtree_env
 ...
 $ conda activate iqtree_env
 ...
-# then just follow the instructions on the Anaconda website. So let's type the following
+# then just follow the instructions on the Anaconda website. So let's type the following. Note that the name of the activate Conda environment is displayed before the '$'
 (iqtree_env) $ conda install -c bioconda iqtree
 ...
 ```
