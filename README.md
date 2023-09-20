@@ -422,9 +422,9 @@ where <code>-x</code> instructs the command to *e<ins>X</ins>tract* (uncompress)
 # Find patterns in files, replace them and work with tables 
 
 ## <code>grep</code> to find patterns in files
-We have already said multiple times that files containing biological data and analyses can be really really big (I'm probably getting boring with this kind of sentence). However, of all the lines and words stored inside a text file, you may just need few of them.
+We have already said multiple times that files containing biological data and analyses can be really really big (I'm probably getting boring with this kind of sentence). And of all the lines and words stored inside a text file, you may just need few of them.
 
-For example, let's have a look at the file [<code>Dmag.HPHG.location.gff</code>](example_files/Dmag.HPHG.location.gff). This is a so-called gff (*General Feature Format*) file, which stores informations about different genetic sequences in a genome (see [here](https://www.ensembl.org/info/website/upload/gff3.html) to know more about gffs). Imagine that you just want to extract informations about mRNA features from the gff. <code>grep</code> is the master UNIX command that accomplishes such tasks, as it ***<ins>G</ins>lobally searches for <ins>R</ins>egular <ins>E</ins>xpression and <ins>P</ins>rints out*** the results:
+For example, let's have a look at the file [<code>Dmag.HPHG.location.gff</code>](example_files/Dmag.HPHG.location.gff). This is a so-called gff (*General Feature Format*) file, which stores informations about different genetic sequences in a genome (see [here](https://www.ensembl.org/info/website/upload/gff3.html) to know more about gffs). Imagine that you just want to extract informations about "<code>mRNA</code>" features from the gff. <code>grep</code> is the master UNIX command that accomplishes such tasks, as it ***<ins>G</ins>lobally searches for <ins>R</ins>egular <ins>E</ins>xpression and <ins>P</ins>rints out*** the results:
 ```bash
 # extract "mRNA" feature from the gff file
 $ grep "mRNA" example_files/Dmag.HPHG.location.gff
@@ -441,9 +441,11 @@ NC_046178.1     Gnomon  mRNA    8288049 8299492 .       +       .       ID=rna-X
 NC_046178.1     Gnomon  mRNA    8316962 8325421 .       +       .       ID=rna-XM_032929673.1;Parent=gene-LOC116923198;Dbxref=GeneID:116923198,Genbank:XM_032929673.1;Name=XM_032929673.1;gene=LOC116923198;model_evidence=Supporting evidence includes similarity to: 1 2C 11 Proteins%2C and 100%25 coverage of the annotated genomic feature by RNAseq alignments%2C including 113 samples with support for all annotated introns;product=homeobox protein Hox-B1a-like;transcript_id=XM_032929673.1
 NC_046177.1     Gnomon  mRNA    2919198 2920876 .       -       .       ID=rna-XM_032927938.1;Parent=gene-LOC116921584;Dbxref=GeneID:116921584,Genbank:XM_032927938.1;Name=XM_032927938.1;gene=LOC116921584;model_evidence=Supporting evidence includes similarity to: 1 EST%2C 11 Proteins%2C and 100%25 coverage of the annotated genomic feature by RNAseq alignments%2C including 108 samples with support for all annotated introns;product=segmentation protein even-skipped-like;transcript_id=XM_032927938.1
 ```
-Once you have instructed <code>grep</code> with the pattern to look for, it will scan your file line by line looking for any occurrence and then print the results to the stdout. Be carefull that the pattern you are looking for is unique, otherwise <code>grep</code> will also... grep unwanted lines.
+Once you have instructed <code>grep</code> with the pattern to look for, it will scan your file line by line looking for any occurrence and then print the results to the stdout.
 
-As we have already seen with [<code>tar</code>](#tar-to-compress-directories-and-man-to-inspect-the-manual-of-a-command), you can change the behaviour of <code>grep</code> by appending many different tags to the main command. If you want to read all the flags that are available for <code>grep</code>, you can look for its manual (*do you remember how to evoke the manual of a UNIX command?*). I'll drop hereafter some of the most-common and useful flags of <code>grep</code> for bioinformaticians:
+Be carefull to use a pattern that is unique, otherwise <code>grep</code> will... grep also unwanted lines. For example, if you wish to extract informations about "<code>gene</code>" features and type <code>grep "gene" example_files/Dmag.HPHG.location.gff</code>, you will be given all the lines of the file, as "<code>gene</code>" is present in each line. Try it out by yourself: *how could you solve the problem?*
+
+As we have already seen with [<code>tar</code>](#tar-to-compress-directories-and-man-to-inspect-the-manual-of-a-command), you can change the behaviour of <code>grep</code> by appending tags to the main command. If you want to read all the flags that are available for <code>grep</code>, you can look for its manual (*do you remember how to evoke the manual of a UNIX command?* If not, see [here](#flags-and-man-to-inspect-the-user-manual-of-a-command)). I'll drop hereafter some of the most-common and useful flags of <code>grep</code> for bioinformaticians:
 ```bash
 # grep the pattern and Count the number of matching lines (N.B.: this flag counts the number of matching lines, not of occurrencies)
 $ grep -c "mRNA" example_files/Dmag.HPHG.location.gff
@@ -481,7 +483,7 @@ $ grep -B2 "FBpp0100176" example_files/Dmel.mito.genome.gb
 
 ## <code>sed</code> to replace patterns in files
 
-Bioinformaticians do not usually want to just find patterns in files, but they may also need to replace that pattern with something else. To this purpose, <code>sed</code> comes into help as your best-friend ***<ins>S</ins>tream <ins>ED</ins>itor***.
+Bioinformaticians do not usually want to just find patterns in files, but they may also wish to replace that pattern with something else. To this purpose, <code>sed</code> comes into help as your best-friend ***<ins>S</ins>tream <ins>ED</ins>itor***.
 
 Together with [<code>grep</code>](#grep-to-find-patterns-in-files) and <code>awk</code>, <code>sed</code> is probably one of the most powerful Unix tools, as it implements many different functions. One of the most widely used is probably the *substitute* function, which allows you to replace a pattern in a file with something else.
 
@@ -489,15 +491,44 @@ Let's go back to the previous example with the [<code>Dmag.HPHG.location.gff</co
 ```
 # replace "mRNA" with "transcript"
 $ sed 's/mRNA/transcrip/' Dmag.HPHG.location.gff
+...
 ```
 
-The <code>sed</code> syntax can be quite confusing at a first glance, especially when compared to other Unix tools. Thus it can be helpful to dissect the command into substrings; generally, <code>sed</code> is followed by:
+The <code>sed</code> syntax can be quite confusing at a first glance, especially when compared to other Unix tools. Thus it can be helpful to dissect the command into substrings. Generally speaking, <code>sed</code> is followed by:
   - **flags**, which are absent in the previous example;
   - the **command** itself in quotes;
   - the **file** that must be processed.
 
 This structure is the same for every <code>sed</code> functionality and thus, once memorized, can be declined in different fashions. However, each <code>sed</code> function has its own internal syntax.
 
-For example, to instruct <code>sed</code> to replace a pattern with something else, we use the syntax <code>s/pattern/replacement/</code>, where the <code>s</code> stands for ***<ins>S</ins>ubstitute*** and the <code>pattern</code> and <code>replacement</code> are delimited by slashes.
+As already seen, to instruct <code>sed</code> to replace a pattern with something else, we use the syntax <code>s/pattern/replacement/</code>, where the <code>s</code> stands for ***<ins>S</ins>ubstitute*** and the <code>pattern</code> and <code>replacement</code> are delimited by slashes.
+
+Let's now see another example of the *substitute* function of <code>sed</code>. As you will experience, many bioinformatic programs hardly bear space characters ('<code> </code>'). So let's substitute *all the* spaces with underscores ('<code>_</code>') in the <code>example_files/Dmel.mito.proteins.faa</code> fasta file:
+
+```
+# substitute spaces with underscores
+$ sed 's/ /_/' example_files/Dmel.mito.proteins.faa
+...
+```
+Take a look a the stdout: did you obtained what you were asking for? No, you didn't! That's because <code>sed</code> subtitute *only* the first occurrence of your pattern in each line. Thus, if you want <code>sed</code> to substitute you pattern *<ins>G</ins>lobally*, you need to add the <code>g</code> option to your command:
+```
+# substitute spaces with underscores globally
+$ sed 's/ /_/g' example_files/Dmel.mito.proteins.faa
+...
+```
+But now there's another problem. If you open the file <code>example_files/Dmel.mito.proteins.faa</code> you'll see that no substitution has been made. That's because <code>sed</code> does not write directly in the file but jsut print the results to the stdout. If you wish to modify your file directly *<ins>I</ins>nplace* (strongly discouraged, if you make a mistake there's no way back) you need the <code>-i</code> flag:
+```
+# substitute spaces with underscores globally
+$ sed -i 's/ /_/g' example_files/Dmel.mito.proteins.faa
+```
+In this case, <code>sed</code> globally substitutes your pattern in the given file and does not print anything to the stdout.
+
+Note that, apart from substitute, <code>sed</code> has many other commands, for example to delete or insert whole lines. We will not cover them in this cheatsheet.
+
+> Use <code>sed 's/pattern/replacement/'</code> to substitute the first occurrence of a pattern in every line of a file.
+>
+> Use <code>sed 's/pattern/replacement/g'</code> to substitute all the occurrences (i.e., globally) of a pattern in a file.
+>
+> Use <code>sed -i</code> to write the results directly in the input file (i.e., in-place).
 
 [↑ Table of contents ↑](#table-of-contents)
