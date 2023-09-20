@@ -566,4 +566,8 @@ Most of the times, when working on shared workstations or servers, you are not g
 
 Besides helping in installing without administrative privileges, Conda is also really useful to solve conflicts between programming language and package versions. So, for example, if you need two softwares, one requiring python v2.7 and one requiring python v3.1, with Conda you can install both of them with litte or no effort.
 
+<p align="center">
+<img src="https://github.com/filonico/UNIX_and_bash_basics/assets/72141380/20bebc36-5717-47c3-97b8-b2c53ed1ab75" height="100">
+</p>
+
 [↑ Table of contents ↑](#table-of-contents)
