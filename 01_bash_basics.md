@@ -1,7 +1,4 @@
-# UNIX and Bash basics for young bioinformaticians
-This repository is meant to introduce trainee students of the EVO•COM group of the University of Bologna to the Bash environment and as a general reference to retrieve most common commands used in bioinformatics.
-
-**Enjoy!**
+# UNIX and Bash basics
 
 ## Table of contents
   - **[Command cheat sheet](#command-cheat-sheet)**
