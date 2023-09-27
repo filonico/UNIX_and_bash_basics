@@ -1,4 +1,10 @@
-# github baics
+**🚧🚧 WORK IN PROGRESS 🚧🚧**
+
+**🚧🚧 WORK IN PROGRESS 🚧🚧**
+
+**🚧🚧 WORK IN PROGRESS 🚧🚧**
+
+## github basics
 We must link the github repository to our server repository (look [here](https://github.com/CompBio-Group/LINEs)).
 
 You can add stuff at different moments and then push everything at the end.

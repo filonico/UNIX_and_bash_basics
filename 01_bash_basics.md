@@ -5,7 +5,6 @@ This repository is meant to introduce trainee students of the EVO•COM group of
 
 ## Table of contents
   - **[Command cheat sheet](#command-cheat-sheet)**
-  - **[Useful textbooks and resources](#useful-textbooks-and-resources)**
   - **[UNIX, Linux and Bash: let's make things clear](#unix-linux-and-bash-lets-make-things-clear)**
     - [UNIX is a family of operating systems](#unix-is-a-family-of-operating-systems)
     - [GNU/Linux is a UNIX-like operating system](#gnulinux-is-a-unix-like-operating-system)
@@ -52,14 +51,6 @@ This repository is meant to introduce trainee students of the EVO•COM group of
 | [<code>unzip</code>](#gzipgunzip-and-zipunzip-to-work-with-compressed-files) | - | Uncompress a zip file |
 | [<code>tar</code>](#tar-to-compress-directories) | *tape archive* | Create an archive of a directory (and compress it if desidered) |
 | [<code>grep</code>](#grep-to-find-patterns-in-files) | *globally searches for regular expression and prints out*| Search for a pattern in files |
-
-[↑ Table of contents ↑](#table-of-contents)
-
-## Useful textbooks and resources
-  - 📚 [*Unix in a nutshell*](https://www.oreilly.com/library/view/unix-in-a/0596100299/) by Arnold Robbins (2005), O'Reilly Media, Inc.
-  - 📚 [*Bioinformatics data skills*](https://www.oreilly.com/library/view/bioinformatics-data-skills/9781449367480/) by Vince Buffalo (2015), O'Reilly Media, Inc.
-  - 📚 [*Bash scripting cheatsheet*](https://devhints.io/bash) by Rico Sta. Cruz.
-  - 📝 Take also a look at [notes by Mariangela Iannello](https://github.com/MariangelaIannello/didattica) (bash basics, scripting and transcriptome assembly/annotation pipelines, gene differential expression) and [notes by Jacopo Martelossi](https://github.com/jacopoM28/CompOmics_Tutorship/tree/main) (bash basics, scripting, genome assembly and annotation, orthology inference)!!
 
 [↑ Table of contents ↑](#table-of-contents)
 
