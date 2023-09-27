@@ -12,10 +12,10 @@ Very few files, actually, but fairly packed. Commands and explanations are prese
 | Macro-topic | Description |
 | --- | --- |
 | [**01 - Bash basics**](./01_bash_basics.md) | The very first introduction to bioinformatics. Look here for basic bash commands and operations. | 
-| [**02 - Working with Conda**](./02_working_with_conda.md) | What's **Conda** and how to use it. |
-| [**03 - Working with screen sessions**](./03_working_in_screen_sessions) | What's a **screen session** and how to use it. |
-| [**04 - git and GitHub**](./04_git_and_github.md) | What's **git** and how to use it.
-| [<code>example_files/</code>](./example_files/) | A directory containing several files used to test commands. |
+| [**02 - Working with Conda**](./02_working_with_conda.md) | What's Conda and how to use it. |
+| [**03 - Working with screen sessions**](./03_working_in_screen_sessions) | What's a screen session and how to use it. |
+| [**04 - git and GitHub**](./04_git_and_github.md) | What's git and how to use it.
+| [Example files](./example_files/) | A directory containing several files used to test commands. |
 
 ## Useful textbooks and other resources
   - 📚 [*Unix in a nutshell*](https://www.oreilly.com/library/view/unix-in-a/0596100299/) by Arnold Robbins (2005), O'Reilly Media, Inc.
