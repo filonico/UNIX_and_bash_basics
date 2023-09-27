@@ -13,7 +13,7 @@ Very few files, actually, but fairly packed. Commands and explanations are prese
 | --- | --- |
 | [**01 - Bash basics**](./01_bash_basics.md) | The very first introduction to bioinformatics. Look here for basic bash commands and operations. | 
 | [**02 - Working with Conda**](./02_working_with_conda.md) | What's Conda and how to use it. |
-| [**03 - Working with screen sessions**](./03_working_in_screen_sessions) | What's a screen session and how to use it. |
+| [**03 - Working with screen sessions**](./03_working_in_screen_sessions.md) | What's a screen session and how to use it. |
 | [**04 - git and GitHub**](./04_git_and_github.md) | What's git and how to use it.
 | [Example files](./example_files/) | A directory containing several files used to test commands. |
 

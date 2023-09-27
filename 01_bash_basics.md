@@ -24,8 +24,6 @@
     - [<code>cut</code>](#cut) 🚧
     - [<code>awk</code>](#awk) 🚧
     - [<code>join and paste</code>](#join-and-paste) 🚧
-  - **Working in screen sessions** 🚧
-  - **Working with git (git clone, git push, git pull, git add,...)** 🚧
 
 ## Command cheat sheet
 | Command | Meaning | Description |
