@@ -9,6 +9,7 @@ Most of the times, when working on shared workstations or servers, you are not g
    - [<code>conda env list</code> to list all Conda environments](#conda-env-list-to-list-all-conda-environments) 🚧
    - [Export a Conda environment to a YAML file](#export-a-conda-environment-to-a-yaml-file) 🚧
    - [Remove a Conda environment](#remove-a-conda-environment) 🚧
+   - [*Supplementary*: what about Mamba?](#supplementary-what-about-mamba) 🚧
 
 ## Command cheat sheet
 | Command | Description |
@@ -95,6 +96,12 @@ $ conda deactivate
 [↑ Table of contents ↑](#table-of-contents)
 
 ## Remove a Conda environment
+
+**🚧🚧 WORK IN PROGRESS 🚧🚧**
+
+[↑ Table of contents ↑](#table-of-contents)
+
+## *Supplementary*: what about Mamba?
 
 **🚧🚧 WORK IN PROGRESS 🚧🚧**
 
