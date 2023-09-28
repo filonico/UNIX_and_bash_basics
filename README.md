@@ -1,7 +1,7 @@
 # Bioinformatics basics for trainee students
-This GitHub was originally intended to introduce trainee students of the **[EVO • COM group](https://sites.google.com/view/evo-com-unibo/home)** of the University of Bologna to the Bash environment. It serves as a friendly resource for accessing commonly used commands in early bioiformatics.
+This GitHub was originally intended to introduce trainee students of the **[EVO • COM group](https://sites.google.com/view/evo-com-unibo/home)** of the University of Bologna to the Bash environment. However, this GitHub is obviously freely available for use by anyone who may find it helpful.
 
-However, this GitHub is obviously freely available for use by anyone who may find it helpful.
+Here you will find a friendly resource for accessing commonly used commands in early bioiformatics.
 
 🪅 **Enjoy!**
 
