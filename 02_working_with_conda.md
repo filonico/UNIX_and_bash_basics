@@ -1,6 +1,12 @@
 # Working with Conda environments
 
-Most of the times, when working on shared workstations or servers, you are not given administrative permissions. That is, you are not allowed to freely roam around and manage directories or install softwares. This is basically for your (and everyone's) safety, so that for example important files are not damaged by mistake. Though, you will need for sure to install new softwares for your analyses. So how can you be able to get programmes without asking every time your administrator? Conda comes into help!!
+Most of the times, when working on shared workstations or servers or clusters, you are not given administrative permissions. That is, you are not allowed to freely roam around and manage directories or install softwares. This is basically for your (and everyone's) safety, so that for example important files are not damaged by mistake.
+
+Though, you will need for sure to install new softwares for your analyses. So how can you be able to get programmes without asking every time your administrator? Conda comes into help!!
+
+<p align="center">
+<img src="https://github.com/filonico/UNIX_and_bash_basics/assets/72141380/20bebc36-5717-47c3-97b8-b2c53ed1ab75" height="100">
+</p>
 
 ## Table of contents
    - [Conda is a package and environment management system](#conda-is-a-package-and-environment-management-system)
@@ -24,11 +30,9 @@ Most of the times, when working on shared workstations or servers, you are not g
 
 Besides helping in installing without administrative privileges, Conda is also really useful to resolve conflicts between programming language and package versions. So, for example, if you need two softwares, one requiring python v2.7 and one requiring python v3.1, with Conda you can install both of them with litte or no effort.
 
-Conda accomplishes this by **operating within environments**. You can think of a Conda environment as... a natural environment. Like the Amazon, the Sahara and the Mediterranean evironments—which are section of the natural world with their own species assemblage, temperature and rain conditions—each Conda environments are sections (directories) of your computer with their own packages and versions of programming languages. The only difference with natural environments is that Conda environments are independent one to the others and do not exchange information (or data).
+Conda accomplishes this by **operating within environments**.
 
-<p align="center">
-<img src="https://github.com/filonico/UNIX_and_bash_basics/assets/72141380/20bebc36-5717-47c3-97b8-b2c53ed1ab75" height="100">
-</p>
+You can think of a Conda environment as... a natural environment, surprisingly. Like the Amazon, the Sahara and the Mediterranean evironments—which are section of the natural world with their own species assemblage, temperature and rain conditions—each Conda environments are sections (directories) of your computer with their own packages and versions of programming languages. The only difference with natural environments is that Conda environments are independent one to the others and do not exchange information (or data).
 
 [↑ Table of contents ↑](#table-of-contents)
 
