@@ -5,7 +5,7 @@ Most of the times, when working on shared workstations or servers or clusters, y
 Though, you will need for sure to install new softwares for your analyses. So how can you be able to get programmes without asking every time your administrator? Conda comes into help!!
 
 <p align="center">
-<img src="https://github.com/filonico/UNIX_and_bash_basics/assets/72141380/20bebc36-5717-47c3-97b8-b2c53ed1ab75" height="100">
+<img src="images/conda_logo.png" height="100">
 </p>
 
 ## Table of contents
@@ -13,9 +13,9 @@ Though, you will need for sure to install new softwares for your analyses. So ho
    - [Create a new Conda environment](#create-a-new-conda-environment)
    - [Install a software through Conda](#install-a-software-through-conda)
    - [List all Conda environment and installed packages](#list-all-conda-environments-or-installed-packages)
-   - [Export a Conda environment to a YAML file](#export-a-conda-environment-to-a-yaml-file) 🚧
-   - [Remove a Conda environment](#remove-a-conda-environment) 🚧
-   - [*Supplementary*: what about Mamba?](#supplementary-what-about-mamba) 🚧
+   - [Export a Conda environment to a YAML file](#export-a-conda-environment-to-a-yaml-file)
+   - [Remove a Conda environment](#remove-a-conda-environment)
+   - [*Extension*: what about Mamba?](#extension-what-about-mamba)
 
 ## Command cheat sheet
 | Command | Description |
@@ -26,7 +26,8 @@ Though, you will need for sure to install new softwares for your analyses. So ho
 | [<code>conda install</code>](#install-a-software-through-conda) | Install a software and required dependencies through Conda |
 | [<code>conda env list</code>](#list-all-conda-environments-or-installed-packages) | List all the available Conda environments |
 | [<code>conda list</code>](#list-all-conda-environments-or-installed-packages) | List all the available packages in a Conda environment |
-| [<code>conda env export</code>](#export-a-conda-environment-to-a-yaml-file) | Export a Conda environment to a YAML file | 
+| [<code>conda env export</code>](#export-a-conda-environment-to-a-yaml-file) | Export a Conda environment to a YAML file |
+| [<code>conda remove</code>](#remove-a-conda-environment) | Remove a Conda environment and all the included packages |
 
 ## Conda is a package and environment management system
 **[Conda](https://docs.conda.io/en/latest/)** is a software that helps you install other softwares by also taking care of managing all the requeried dependencies.
@@ -144,12 +145,22 @@ See [here](#create-a-new-conda-environment) to know how to create an environment
 
 ## Remove a Conda environment
 
-**🚧🚧 WORK IN PROGRESS 🚧🚧**
+If you wish to **remove a Conda environment** that you no longer use or that turned into a messy collection of packages, type:
+
+```bash
+$ conda remove -n my_env_name --all
+```
 
 [↑ Table of contents ↑](#table-of-contents)
 
-## *Supplementary*: what about Mamba?
+## *Extension*: what about Mamba?
 
-**🚧🚧 WORK IN PROGRESS 🚧🚧**
+All right, Conda is tremendously helpful for bioinformaticians to manage software installations and the relative dependencies. However, sometimes even Conda struggles with installing certain packages and you may spend hours in trying to fix your environment.
+
+To overcome such diffulties, you can try to use **another environment and package manager**, **[Mamba](https://mamba.readthedocs.io/en/latest/index.html#)** (there must be something going on with herpetology here...). You can easily install it through the normal Conda pipeline, but then you will rely on Mamba to install softwares and dependencies. Apparently, it is faster and more efficient in solving environments than Conda.
+
+<p align="center">
+<img src="images/mamba_logo.png" height="100">
+</p>
 
 [↑ Table of contents ↑](#table-of-contents)
