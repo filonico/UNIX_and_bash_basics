@@ -160,7 +160,7 @@ All right, Conda is tremendously helpful for bioinformaticians to manage softwar
 To overcome such diffulties, you can try to use **another environment and package manager**, **[Mamba](https://mamba.readthedocs.io/en/latest/index.html)** (there must be something going on with herpetology here...). You can easily install it through the normal Conda pipeline, but then you will rely on Mamba to install softwares and dependencies. Apparently, it is faster and more efficient in solving environments than Conda.
 
 <p align="center">
-<img src="images/mamba_logo.png" height="300">
+<img src="images/mamba_logo.png" height="100">
 </p>
 
 [↑ Table of contents ↑](#table-of-contents)
