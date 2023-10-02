@@ -163,4 +163,11 @@ To overcome such diffulties, you can try to use **another environment and packag
 <img src="images/mamba_logo.png" height="200">
 </p>
 
+Mamba has the same commands as Conda, but has indeed a far more fancy graphical output! So once installed, you can for example install softwares by typing:
+```bash
+(iqtree_env) $ mamba install -c bioconda iqtree
+```
+
+I would like to thank **[for-giobbe](https://github.com/for-giobbe)** for sharing this package manager with me!
+
 [↑ Table of contents ↑](#table-of-contents)
