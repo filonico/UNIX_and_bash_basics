@@ -157,10 +157,10 @@ $ conda remove -n my_env_name --all
 
 All right, Conda is tremendously helpful for bioinformaticians to manage software installations and the relative dependencies. However, sometimes even Conda struggles with installing certain packages and you may spend hours in trying to fix your environment.
 
-To overcome such diffulties, you can try to use **another environment and package manager**, **[Mamba](https://mamba.readthedocs.io/en/latest/index.html#)** (there must be something going on with herpetology here...). You can easily install it through the normal Conda pipeline, but then you will rely on Mamba to install softwares and dependencies. Apparently, it is faster and more efficient in solving environments than Conda.
+To overcome such diffulties, you can try to use **another environment and package manager**, **[Mamba](https://mamba.readthedocs.io/en/latest/index.html)** (there must be something going on with herpetology here...). You can easily install it through the normal Conda pipeline, but then you will rely on Mamba to install softwares and dependencies. Apparently, it is faster and more efficient in solving environments than Conda.
 
 <p align="center">
-<img src="images/mamba_logo.png" height="400">
+<img src="images/mamba_logo.png" height="300">
 </p>
 
 [↑ Table of contents ↑](#table-of-contents)
