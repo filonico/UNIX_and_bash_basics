@@ -11,6 +11,8 @@ To overcome this issue, you can rely on the <code>screen</code> utility.
 | Command | Description |
 | --- | --- |
 | [<code>screen -S</code>](#create-a-new-screen-session) | Create a new screen session with a meaningful name |
+| <kbd>Ctrl</kbd> + <kbd>A</kbd>, <kbd>D</kbd>| Detach from a screen session |
+| [<code>screen -ls</code>](#list-all-screen-sessions) | List all available screens |
 
 ## <code>screen</code> is a terminal multiplexer
 The <code>screen</code> GNU utility allows users to **create and work with multiple terminals** in parallel (terminal multiplexer). This lets processes run even when the window is not visible or when the <code>ssh</code> session is terminated.
@@ -30,6 +32,24 @@ To create a **screen session with a meaningful *<ins>S</ins>ession* name**, use 
 $ screen -S my_new_screen_session
 ```
 
-To detach from a working screen session, 
+To *<ins>D</ins>etach* from a working screen session, press <kbd>Ctrl</kbd> + <kbd>A</kbd>, then press <kbd>D</kbd>.
+
+[↑ Table of contents ↑](#table-of-contents)
+
+## List all screen sessions
+
+If you wish to get a *<ins>L</ins>i<ins>S</ins>t* which screen sessions you have created and (if given) their meaningful names, type
+
+```bash
+$ screen -ls
+There are screens on:
+        49152.DE_fish   (Attached)
+        49056.DE_philippinarum  (Detached)
+        48960.bivalves_SD       (Detached)
+        48864.branchio_phylogenomics    (Detached)
+4 Sockets in /var/run/screen/S-filipponicolini.
+```
+
+In the stdout, you are given the list of available screens, their uniqe numerical identifier and their meaningful name (if provided). Also, you are told which screens are currently attached and which are detached.
 
 [↑ Table of contents ↑](#table-of-contents)

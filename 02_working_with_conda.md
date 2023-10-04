@@ -12,7 +12,7 @@ Though, you will need for sure to install new softwares for your analyses. So ho
    - **[Conda is a package and environment management system](#conda-is-a-package-and-environment-management-system)**
    - **[Create a new Conda environment](#create-a-new-conda-environment)**
    - **[Install a software through Conda](#install-a-software-through-conda)**
-   - **[List all Conda environment and installed packages](#list-all-conda-environments-or-installed-packages)**
+   - **[List all Conda environments and installed packages](#list-all-conda-environments-or-installed-packages)**
    - **[Export a Conda environment to a YAML file](#export-a-conda-environment-to-a-yaml-file)**
    - **[Remove a Conda environment](#remove-a-conda-environment)**
    - **[*Extension*: what about Mamba?](#extension-what-about-mamba)**
