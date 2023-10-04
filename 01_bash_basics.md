@@ -79,7 +79,7 @@ The UNIX system was originally created without any graphical interface because o
 
 *So why should we use the shell to do bioinformatics?* The shell (and CLIs in general) is not as simple and intuitive to use as a GUI, but it is far more powerful. In fact, the shell allows users to accomplish very big and repetitive tasks in a very efficient and fast way, just by typing text with the keyboard and never using the mouse.
 
-For example, imagine you want to rename all the 874 photos of flamingos and shorebirds you have taken on your last field trip in Comacchio by including the date, the place and a progressive number. If you attempt to do it by means of the GUI, even if you are very skilled with <code>Ctrl+C</code>, <code>Ctrl+V</code> and other keyboard shortcuts, the task will probably take several hours and will prevent you from spending some time with your houseplants.
+For example, imagine you want to rename all the 874 photos of flamingos and shorebirds you have taken on your last field trip in Comacchio by including the date, the place and a progressive number. If you attempt to do it by means of the GUI, even if you are very skilled with <kbd>Ctrl</kbd> + <kbd>C</kbd>, <kbd>Ctrl</kbd> + <kbd>V</kbd> and other keyboard shortcuts, the task will probably take several hours and will prevent you from spending some time with your houseplants.
 
 On the contrary, the shell will just take few minutes of your time to do the task (you can try to think about a command to rename the photos from Comacchio later on this manual...). And obviusly, bioinformatics is basically made up of tons of files that you have to rename, modify, move and execute.
 
@@ -108,7 +108,7 @@ $ ssh username@IPaddress
 ```
 and you will be asked a password. If everything went well, then you are logged-in in your remote machine.
 
-If you want to **log-out** from the remote machine, just press <code>[Ctrl]+[D]</code> or type:
+If you want to **log-out** from the remote machine, just press <kbd>Ctrl</kbd> + <kbd>D</kbd> or type:
 
 ```bash
 $ exit
