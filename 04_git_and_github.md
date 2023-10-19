@@ -20,10 +20,15 @@ This is the way to work on our repository. With shared repositories is different
 
 Create new branch git co -b [the_name]
 
-
-Remove directory already online
+```bash
+git pull
+git add .
+git commit -m "a message"
+git push
+# Remove directory already online
 git rm -r --cached some-directory
 git commit -m 'Remove the now ignored directory "some-directory"'
 git push origin master
+```
 
 I would like to thank **[jacopoM28](https://github.com/jacopoM28)** for sharing his knowledge about the use of git with our group!
