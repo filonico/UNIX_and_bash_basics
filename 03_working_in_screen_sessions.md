@@ -6,13 +6,15 @@ To overcome this issue, you can rely on the <code>screen</code> utility.
 ## Table of contents
 * **[<code>screen</code> is a terminal multiplexer](#screen-is-a-terminal-multiplexer)**
 * **[Create a new screen session](#create-a-new-screen-session)**
+* **[Attach/detach to/from a screen session](#attachdetach-tofrom-a-screen-session)**
 
 ## Command cheat sheet
 | Command | Description |
 | --- | --- |
 | [<code>screen -S</code>](#create-a-new-screen-session) | Create a new screen session with a meaningful name |
-| <kbd>Ctrl</kbd> + <kbd>A</kbd>, <kbd>D</kbd>| Detach from a screen session |
 | [<code>screen -ls</code>](#list-all-screen-sessions) | List all available screens |
+| [<code>screen -r</code>](#attachdetach-tofrom-a-screen-session) | Resume an existing screen session |
+| <kbd>Ctrl</kbd> + <kbd>A</kbd>, <kbd>D</kbd>| Detach from a screen session |
 
 ## <code>screen</code> is a terminal multiplexer
 The <code>screen</code> GNU utility allows users to **create and work with multiple terminals** in parallel (terminal multiplexer). This lets processes run even when the window is not visible or when the <code>ssh</code> session is terminated.
@@ -32,8 +34,6 @@ To create a **screen session with a meaningful *<ins>S</ins>ession* name**, use 
 $ screen -S my_new_screen_session
 ```
 
-To *<ins>D</ins>etach* from a working screen session, press <kbd>Ctrl</kbd> + <kbd>A</kbd>, then press <kbd>D</kbd>.
-
 [↑ Table of contents ↑](#table-of-contents)
 
 ## List all screen sessions
@@ -51,5 +51,19 @@ There are screens on:
 ```
 
 In the stdout, you are given the list of available screens, their uniqe numerical identifier and their meaningful name (if provided). Also, you are told which screens are currently attached and which are detached.
+
+[↑ Table of contents ↑](#table-of-contents)
+
+## Attach/detach to/from a screen session
+
+When you want to *<ins>R</ins>esume* a previosly-created screen session, you have to know either its meaningful name or numerical identifier (that's another reason why meaningful names are really usefull). Then you can type:
+
+```bash
+$ screen -r screen_name_or_id
+```
+
+And your screen will open.
+
+To *<ins>D</ins>etach* from a working screen session, press <kbd>Ctrl</kbd> + <kbd>A</kbd>, then press <kbd>D</kbd>.
 
 [↑ Table of contents ↑](#table-of-contents)
