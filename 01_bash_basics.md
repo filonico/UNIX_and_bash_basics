@@ -382,15 +382,15 @@ $ tar -c -v -z -f example_files.tar.gz example_file/
 # or, in short
 $ tar -cvzf example_files.tar.gz example_file/
 ```
-where <code>-c</code> instructs the command to *<ins>C</ins>reate* a new archive, <code>-v</code> instructs to be *<ins>V</ins>erbose* on the stdout, <code>-z</code> instructs to *g<ins>Z</ins>ip* the archive, and <code>-f</code> specifies the output *<ins>F</ins>ile* name.
+where <code>-c</code> instructs the command to *<ins>C</ins>reate* a new archive, <code>-v</code> instructs to be *<ins>V</ins>erbose* on the stdout, <code>-z</code> instructs to *<ins>Z</ins>ip* the archive, and <code>-f</code> specifies the output *<ins>F</ins>ile* name.
 
 You can use <code>tar</code> also to **un-compress and un-archive** a directory:
 ```bash
 # archive and compress our example_files/ directory
-$ tar -v -x -f example_files.tar.gz
+$ tar -x -v -z -f example_files.tar.gz
 
 # or, in short
-$ tar -vxf example_files.tar.gz
+$ tar -xvzf example_files.tar.gz
 ```
 where <code>-x</code> instructs the command to *e<ins>X</ins>tract* (uncompress) the gzip archive.
 
