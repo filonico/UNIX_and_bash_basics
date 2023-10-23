@@ -46,6 +46,7 @@
 | [<code>unzip</code>](#gzipgunzip-and-zipunzip-to-work-with-compressed-files) | - | Uncompress a zip file |
 | [<code>tar</code>](#tar-to-compress-directories) | *tape archive* | Create an archive of a directory (and compress it if desidered) |
 | [<code>grep</code>](#grep-to-find-patterns-in-files) | *globally searches for regular expression and prints out*| Search for a pattern in files |
+| [<code>sed</code>](#sed-to-replace-patterns-in-files) | *stream editor* | Perform basic text transformations (such as substitutions) |
 
 [↑ Table of contents ↑](#table-of-contents)
 
